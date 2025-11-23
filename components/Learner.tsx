@@ -102,7 +102,7 @@ const Learner = () => {
               </defs>
 
               <g className="ring-1-animation">
-                <text font-size="18" fill="white" font-family="sans-serif">
+                <text font-size="18" fill="white" font-family="sans-serif" fontWeight="bold">
                   <textPath href="#ring-1" startOffset="0%">
                     COLLABORATOR • COMMUNICATOR • CRITICAL THINKER • CREATIVE
                     THINKER • GLOBAL CITIZEN • DIGITAL CITIZEN • LEADER • LIFELONG
@@ -112,7 +112,7 @@ const Learner = () => {
               </g>
 
               <g className="ring-2-animation">
-                <text font-size="18" fill="white" font-family="sans-serif">
+                <text font-size="18" fill="white" font-family="sans-serif" fontWeight="bold">
                   <textPath href="#ring-2" startOffset="0%">
                     DIFFERENTIATED INSTRUCTION • TECHNOLOGY INTEGRATION • LEARNING
                     THROUGH INQUIRY • CONCEPTUAL UNDERSTANDING
@@ -121,15 +121,15 @@ const Learner = () => {
               </g>
 
               <g className="ring-3-animation">
-                <text font-size="20" fill="white" font-family="sans-serif">
+                <text font-size="20" fill="white" font-family="sans-serif" fontWeight="bold">
                   <textPath href="#ring-3" startOffset="0%">
-                    JOY OF LEARNING • WELL-BEING
+                    JOY OF LEARNING • WELL-BEING • JOY OF LEARNING • WELL-BEING
                   </textPath>
                 </text>
               </g>
 
               <g className="ring-4-animation">
-                <text font-size="18" fill="white" font-family="sans-serif">
+                <text font-size="18" fill="white" font-family="sans-serif" fontWeight="bold">
                   <textPath href="#ring-4" startOffset="0%">
                     HOLISTIC DEVELOPMENT • CULTURE &amp; VALUES • GUIDING
                     STATEMENTS •
