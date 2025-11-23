@@ -12,33 +12,43 @@ const curriculumData = [
       "Lorem ipsum dolor sit amet consectur adipiscing elit sed do iusmod.",
   },
   {
-    id: 1,
+    id: 2,
     icon: "/assets/curriculum/yellow-paint-tube.png",
     img: "/assets/curriculum/thunder.png",
     bgColor: "bg-[#704FE7]",
-    title: "Inquiry Based Learning",
+    title: "Collaborative Spaces",
     description:
       "Lorem ipsum dolor sit amet consectur adipiscing elit sed do iusmod.",
   },
   {
-    id: 1,
+    id: 3,
     icon: "/assets/curriculum/yellow-paint-tube.png",
     img: "/assets/curriculum/star.png",
     bgColor: "bg-[#FFD463]",
-    title: "Inquiry Based Learning",
+    title: "Experential Learning",
     description:
       "Lorem ipsum dolor sit amet consectur adipiscing elit sed do iusmod.",
   },
+  // {
+  //   id: 4,
+  //   icon: "/assets/curriculum/yellow-paint-tube.png",
+  //   img: "/assets/curriculum/star.png",
+  //   bgColor: "bg-[#FF81B9]",
+  //   title: "Holistic Developement",
+  //   description:
+  //     "Lorem ipsum dolor sit amet consectur adipiscing elit sed do iusmod.",
+  // },
 ];
 
 const Curriculum = () => {
   return (
-    <div className="bg-[#0F715F]">
+    <div className="w-full bg-[#0F715F] relative">
+      <Image src={'/assets/black-cat-1.png'} height={200} width={250} alt="black-panthar" className="absolute right-0 top-10" />
       <div className="max-w-7xl mx-auto py-10">
-        <h1 className="pb-5">Interactive Curriculum for kids</h1>
+        <h1 className="pb-5 text-3xl text-white font-bold">Interactive Curriculum <br/>for kids</h1>
         <div className="flex gap-5 justify-between">
           {curriculumData.map((data) => (
-            <div className={`${data.bgColor} rounded-3xl p-10 relative`}>
+            <div className={`${data.bgColor} rounded-3xl p-10 relative aspect-square flex flex-col justify-between`} key={data.id}>
               <Image
                 src={data.img}
                 height="150"
@@ -63,7 +73,7 @@ const Curriculum = () => {
                 />
               </div>
 
-              <div className="pt-10">
+              <div className="">
                 <h2 className="text-2xl font-bold">{data.title}</h2>
                 <p>{data.description}</p>
               </div>

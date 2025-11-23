@@ -8,6 +8,7 @@ import Facilities from "@/components/Facilities";
 import Featured from "@/components/Featured";
 import Growth from "@/components/Growth";
 import Hero from "@/components/Hero/Hero";
+import Learner from "@/components/Learner";
 import Quote from "@/components/Quote";
 import Testimonials from "@/components/Testimonials";
 import Welcome from "@/components/Welcome";
@@ -25,6 +26,7 @@ export default function Home() {
       <Quote />
       <Campus />
       <Growth />
+      <Learner />
       <CTA />
       <Testimonials />
       <Blogs />

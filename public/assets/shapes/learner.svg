@@ -1,0 +1,76 @@
+<svg
+    viewBox="0 0 500 500"
+    width="400"
+    height="400"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <!-- BACKGROUND CIRCLES -->
+    <circle cx="250" cy="250" r="220" fill="#c87a1c" />
+    <circle cx="250" cy="250" r="185" fill="#f19b2f" />
+    <circle cx="250" cy="250" r="150" fill="#625b9e" />
+    <circle cx="250" cy="250" r="115" fill="#73b86b" />
+    <circle cx="250" cy="250" r="80"  fill="#f19b2f" />
+
+    <!-- PATHS FOR TEXT (invisible) -->
+    <defs>
+      <!-- outermost ring -->
+      <path
+        id="ring-1"
+        d="M250,250 m-210,0 a210,210 0 1,1 420,0 a210,210 0 1,1 -420,0"
+      />
+      <!-- ring 2 -->
+      <path
+        id="ring-2"
+        d="M250,250 m-175,0 a175,175 0 1,1 350,0 a175,175 0 1,1 -350,0"
+      />
+      <!-- ring 3 -->
+      <path
+        id="ring-3"
+        d="M250,250 m-140,0 a140,140 0 1,1 280,0 a140,140 0 1,1 -280,0"
+      />
+      <!-- ring 4 -->
+      <path
+        id="ring-4"
+        d="M250,250 m-105,0 a105,105 0 1,1 210,0 a105,105 0 1,1 -210,0"
+      />
+    </defs>
+
+    <!-- TEXT ON RINGS -->
+    <text font-size="16" fill="white" font-family="sans-serif">
+      <textPath href="#ring-1" startOffset="50%" text-anchor="middle">
+        COLLABORATOR • COMMUNICATOR • CRITICAL THINKER • CREATIVE THINKER • GLOBAL CITIZEN • DIGITAL CITIZEN • LEADER • LIFELONG LEARNER
+      </textPath>
+    </text>
+
+    <text font-size="18" fill="white" font-family="sans-serif">
+      <textPath href="#ring-2" startOffset="50%" text-anchor="middle">
+        DIFFERENTIATED INSTRUCTION • TECHNOLOGY INTEGRATION • LEARNING THROUGH INQUIRY • CONCEPTUAL UNDERSTANDING
+      </textPath>
+    </text>
+
+    <text font-size="20" fill="white" font-family="sans-serif">
+      <textPath href="#ring-3" startOffset="50%" text-anchor="middle">
+        JOY OF LEARNING • WELL-BEING
+      </textPath>
+    </text>
+
+    <text font-size="18" fill="white" font-family="sans-serif">
+      <textPath href="#ring-4" startOffset="50%" text-anchor="middle">
+        HOLISTIC DEVELOPMENT • CULTURE &amp; VALUES • GUIDING STATEMENTS
+      </textPath>
+    </text>
+
+    <!-- CENTER TEXT -->
+    <text
+      x="50%"
+      y="50%"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      font-size="28"
+      font-weight="700"
+      fill="white"
+      font-family="sans-serif"
+    >
+      LEARNER
+    </text>
+  </svg>
