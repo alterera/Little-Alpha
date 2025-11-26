@@ -41,6 +41,9 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  --animate-shine: shine 3s ease-out infinite;
+  --animate-gradient-flow: gradientFlow 10s ease 0s infinite normal none running;
+  
   @keyframes marquee {
   from {
     transform: translateX(0);
@@ -55,6 +58,28 @@
     }
   to {
     transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes shine {
+    0% {
+      background-position: 200% 0;
+    }
+    25% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 }

@@ -11,6 +11,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
+import { motion } from "framer-motion";
 
 type FormData = {
   name: string;
@@ -122,8 +123,14 @@ const CTA = () => {
       <div className="relative z-20 max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column - Content */}
-          <div className="flex flex-col justify-center text-white">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col justify-center text-white"
+          >
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Let your child join the fun with Little Alpha
             </h2>
             <p className="text-lg md:text-xl mb-8 leading-relaxed opacity-90">
@@ -132,13 +139,16 @@ const CTA = () => {
               backbone of our methodology. We want every learner to think, explore,
               and learn.
             </p>
-            <button className="bg-[#0C7C55] hover:bg-[#0a6b4a] text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 w-fit">
-              Learn More
-            </button>
-          </div>
+          </motion.div>
 
           {/* Right Column - Form */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-2xl">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-2xl"
+          >
             <div className="mb-6">
               <h4 className="text-2xl md:text-3xl font-bold text-[#0F715F] mb-3">
                 Fill out the form & we will get in touch with you!
@@ -230,7 +240,7 @@ const CTA = () => {
                 {isSubmitting ? "Submitting..." : "Submit"}
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

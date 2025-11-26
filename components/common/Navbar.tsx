@@ -3,8 +3,15 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
-const navLinks = ["Who We Are", "Our Curriculum", "Campus Life", "Events"];
+const navLinks = [
+  { href: "/who-we-are", label: "Who We Are" },
+  { href: "/our-curriculum", label: "Our Curriculum" },
+  { href: "/campus-life", label: "Campus Life" },
+  { href: "/events", label: "Events" },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +20,7 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
+    <header className="absolute top-[48px] sm:top-[52px] left-0 w-full z-40 bg-transparent">
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4">
         <Image
           src={"/logo-white.png"}
@@ -24,25 +31,43 @@ const Navbar = () => {
         />
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8 lg:gap-10 text-white">
+        <div className="hidden md:flex items-center gap-8 lg:gap-10">
           <ul className="flex gap-6 lg:gap-10 text-sm lg:text-base">
-            {navLinks.map((link) => (
-              <li key={link} className="cursor-pointer hover:text-[#F4D548] transition">
-                {link}
+            {navLinks.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href}>
+                  <Button
+                    variant="link"
+                    effect="hoverUnderline"
+                    className="text-white! font-medium hover:text-[#F75691]! transition-colors cursor-pointer after:bg-white"
+                  >
+                    {item.label}
+                  </Button>
+                </Link>
               </li>
             ))}
           </ul>
 
-          <button className="bg-[#0F715F] text-white py-2 px-4 rounded-tl-2xl rounded-br-2xl hover:bg-[#0b5b43] transition">
+          {/* <button className="bg-[#0F715F] text-white py-2 px-4 rounded-tl-2xl rounded-br-2xl hover:bg-[#0b5b43] transition">
             Inquire Now
-          </button>
+          </button> */}
+
+          <Button
+            effect="shine"
+            className="rounded-none rounded-tl-2xl rounded-br-2xl bg-[#0F715F] hover:text-white hover:bg-[#F75691] hover:cursor-pointer hover:shadow-xl"
+          >
+            Inquire Now
+          </Button>
         </div>
 
         {/* Mobile Actions */}
         <div className="flex md:hidden items-center gap-3 text-white">
-          <button className="bg-[#0F715F] text-white py-2 px-4 rounded-tl-2xl rounded-br-2xl text-sm font-semibold">
-            Inquire
-          </button>
+          <Button
+            effect="shine"
+            className="rounded-none rounded-tl-2xl rounded-br-2xl bg-[#0F715F] hover:text-white hover:bg-[#F75691] hover:cursor-pointer hover:shadow-xl"
+          >
+            Inquire Now
+          </Button>
           <button
             onClick={toggleMenu}
             aria-label="Toggle navigation menu"
@@ -55,7 +80,7 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-[40vw] min-w-[260px] bg-[#08382b] text-white z-40 transform transition-transform duration-500 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-[40vw] min-w-[260px] bg-[#08382b] text-white z-[100] transform transition-transform duration-500 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -72,14 +97,15 @@ const Navbar = () => {
           </div>
 
           <nav className="flex flex-col gap-6 text-base font-medium">
-            {navLinks.map((link) => (
-              <button
-                key={link}
+            {navLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
                 onClick={closeMenu}
-                className="text-left hover:text-[#F4D548] transition"
+                className="text-left text-white hover:text-[#F75691] transition-colors"
               >
-                {link}
-              </button>
+                {item.label}
+              </Link>
             ))}
           </nav>
 
@@ -96,7 +122,7 @@ const Navbar = () => {
         <button
           aria-label="Close menu overlay"
           onClick={closeMenu}
-          className="fixed inset-0 bg-black/40 z-30 md:hidden"
+          className="fixed inset-0 bg-black/40 z-[90] md:hidden"
         />
       )}
     </header>

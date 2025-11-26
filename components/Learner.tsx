@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 const Learner = () => {
   return (
@@ -8,22 +11,35 @@ const Learner = () => {
         Admission
       </div>
 
-      <div className="max-w-6xl mx-auto py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-[#0C7C55] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold mb-6 sm:mb-8 md:mb-10">
+      <div className="max-w-7xl mx-auto py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-[#0C7C55] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold mb-6 sm:mb-8 md:mb-10"
+        >
           It takes a school to raise the world
-        </h2>
+        </motion.h2>
         <div className="flex flex-col lg:flex-row justify-between pt-6 sm:pt-8 md:pt-10 items-center gap-8 lg:gap-12">
-          <div className="flex-1 lg:pr-6 w-full lg:w-auto">
-            <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-center lg:text-left">
-              At Little Alpha, the child is at the centre of everything we do.
-              Holistic development is our priority, achieved through the
-              application of 21st-century skills because our learners are none
-              other than Alphas! Inquiry-based learning is the backbone of our
-              methodology. We want every learner to think, explore, and learn.
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex-1 lg:pr-6 w-full lg:w-auto"
+          >
+            <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed text-center lg:text-left">At Little Alpha, Bikaner every child is the heart of our purpose and practice. We believe that true learning happens when a child feels valued, understood, and encouraged to grow at their own pace. That's why our approach focuses on holistic development. <br/> <br/> Nurturing not just academics, but emotional, social, physical, and creative growth. To prepare our learners for the future, we integrate 21st-century skills such as critical thinking, collaboration, communication, and creativity into everyday learning experiences. Our teaching philosophy is deeply rooted in inquiry-based learning, where curiosity leads the way. Instead of simply giving answers, we encourage learners to ask questions, investigate ideas, explore concepts, and construct their own understanding.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex-1 flex justify-center items-center w-full lg:w-auto">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex-1 flex justify-center items-center w-full lg:w-auto"
+          >
             {/* CIRCULAR GRAPHIC */}
             <svg
               viewBox="0 0 500 500"
@@ -139,7 +155,7 @@ const Learner = () => {
                 LEARNER
               </text>
             </svg>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

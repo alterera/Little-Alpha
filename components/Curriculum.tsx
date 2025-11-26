@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { useDotButton } from "./Hero/DotButtons";
 import Autoplay from "embla-carousel-autoplay";
+import { motion } from "framer-motion";
 import "@/styles/embla.css";
 
 const Curriculum = () => {
@@ -25,19 +26,66 @@ const Curriculum = () => {
     }
   }, [emblaApi]);
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <div className="w-full bg-[#0F715F] relative overflow-hidden">
-      <Image
-        src={"/assets/black-cat-1.png"}
-        height={300}
-        width={350}
-        alt="black-panthar"
-        className="absolute right-0 top-10 hidden md:block z-10"
-      />
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <Image
+          src={"/assets/black-cat-1.png"}
+          height={300}
+          width={350}
+          alt="black-panthar"
+          className="absolute right-0 top-10 hidden md:block z-10"
+        />
+      </motion.div>
       <div className="max-w-7xl mx-auto py-8 sm:py-10 md:py-12 px-4 sm:px-6 lg:px-8 relative z-20">
-        <h1 className="pb-5 sm:pb-6 md:pb-8 text-2xl sm:text-3xl md:text-4xl text-white font-bold">
-          Interactive Curriculum <br className="hidden sm:block" /> for kids
-        </h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="pb-5 sm:pb-6 md:pb-8 text-2xl sm:text-3xl md:text-4xl text-white font-bold"
+        >
+          Interactive <span className="font-marckscript text-[#F4D548]">Curriculum</span> <br/> for kids
+        </motion.h1>
 
         {/* Carousel Container - Only visible on small screens */}
         <div className="relative lg:hidden -mx-4 sm:-mx-6 lg:mx-0">
@@ -45,20 +93,26 @@ const Curriculum = () => {
             <div className="flex">
               {/* Box 1 - Inquiry Based Learning */}
               <div className="shrink-0 w-full px-4 sm:px-6">
-                <div className="bg-[#DFC8FD] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between">
-                  <Image
+                <motion.div
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="bg-[#DFC8FD] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between"
+                >
+              <Image
                     src="/assets/curriculum/circle.png"
                     height={250}
                     width={250}
-                    alt="shape"
+                alt="shape"
                     className="absolute right-0 top-0 w-48 h-48 sm:w-64 sm:h-64 md:w-[200px] md:h-[200px]"
-                  />
+              />
                   <div className="relative flex items-center">
-                    <Image
+                <Image
                       src="/assets/curriculum/icon-bg.png"
-                      height={80}
-                      width={80}
-                      alt="icon bg"
+                  height={80}
+                  width={80}
+                  alt="icon bg"
                       className="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24"
                     />
                     <Image
@@ -70,9 +124,9 @@ const Curriculum = () => {
                     />
                   </div>
                   <div className="relative z-10">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-black">
-                      Inquiry Based{" "}
-                      <span className="font-marckscript text-pink-500">
+                    <h2 className="text-3xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-black">
+                      Inquiry Based <br/>
+                      <span className="font-marckscript text-pink-500 text-4xl">
                         Learning
                       </span>
                     </h2>
@@ -81,12 +135,18 @@ const Curriculum = () => {
                       iusmod.
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </div>
 
               {/* Box 2 - Collaborative Spaces */}
               <div className="shrink-0 w-full px-4 sm:px-6">
-                <div className="bg-[#704FE7] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between">
+                <motion.div
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="bg-[#704FE7] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between"
+                >
                   <Image
                     src="/assets/curriculum/thunder.png"
                     height={250}
@@ -102,18 +162,18 @@ const Curriculum = () => {
                       alt="icon bg"
                       className="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24"
                     />
-                    <Image
+                <Image
                       src="/assets/curriculum/yellow-paint-tube.png"
-                      height={50}
-                      width={50}
-                      alt="icon"
+                  height={50}
+                  width={50}
+                  alt="icon"
                       className="absolute left-5 w-12 h-12 sm:w-12 sm:h-12 md:w-[50px] md:h-[50px]"
                     />
                   </div>
                   <div className="relative z-10">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-white">
-                      Collaborative{" "}
-                      <span className="font-marckscript text-yellow-400">
+                    <h2 className="text-3xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-white">
+                      Collaborative<br/>
+                      <span className="font-marckscript text-4xl text-yellow-400">
                         Spaces
                       </span>
                     </h2>
@@ -122,12 +182,18 @@ const Curriculum = () => {
                       iusmod.
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </div>
 
               {/* Box 3 - Experential Learning */}
               <div className="shrink-0 w-full px-4 sm:px-6">
-                <div className="bg-[#FFD463] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between">
+                <motion.div
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="bg-[#FFD463] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between"
+                >
                   <Image
                     src="/assets/curriculum/star.png"
                     height={250}
@@ -152,9 +218,9 @@ const Curriculum = () => {
                     />
                   </div>
                   <div className="relative z-10">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-black">
-                      Experential{" "}
-                      <span className="font-marckscript text-green-600">
+                    <h2 className="text-3xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-black">
+                      Experential <br/>
+                      <span className="font-marckscript text-4xl text-green-600">
                         Learning
                       </span>
                     </h2>
@@ -163,7 +229,7 @@ const Curriculum = () => {
                       iusmod.
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -184,9 +250,18 @@ const Curriculum = () => {
         </div>
 
         {/* Grid Layout - Only visible on large screens */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-5 xl:gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="hidden lg:grid lg:grid-cols-3 gap-5 xl:gap-6"
+        >
           {/* Box 1 - Inquiry Based Learning */}
-          <div className="bg-[#DFC8FD] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between">
+          <motion.div
+            variants={cardVariants}
+            className="bg-[#DFC8FD] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between"
+          >
             <Image
               src="/assets/curriculum/circle.png"
               height={250}
@@ -212,17 +287,20 @@ const Curriculum = () => {
             </div>
             <div className="relative z-10">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-2 sm:mb-3 text-black">
-                Inquiry Based{" "}
-                <span className="font-marckscript text-[#F75691]">Learning</span>
+                Inquiry Based <br/>
+                <span className="font-marckscript text-[#F75691] text-4xl">Learning</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-black">
                 Lorem ipsum dolor sit amet consectur.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Box 2 - Collaborative Spaces */}
-          <div className="bg-[#704FE7] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between">
+          <motion.div
+            variants={cardVariants}
+            className="bg-[#704FE7] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between"
+          >
             <Image
               src="/assets/curriculum/thunder.png"
               height={250}
@@ -248,17 +326,20 @@ const Curriculum = () => {
             </div>
             <div className="relative z-10">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-2 sm:mb-3 text-white">
-                Collaborative{" "}
-                <span className="font-marckscript text-[#F4D548]">Spaces</span>
+                Collaborative<br/>
+                <span className="font-marckscript text-[#F4D548] text-4xl">Spaces</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-white">
                 Lorem ipsum dolor sit amet consectur.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Box 3 - Experential Learning */}
-          <div className="bg-[#FFD463] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between">
+          <motion.div
+            variants={cardVariants}
+            className="bg-[#FFD463] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between"
+          >
             <Image
               src="/assets/curriculum/star.png"
               height={250}
@@ -285,19 +366,25 @@ const Curriculum = () => {
             <div className="relative z-10">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-2 sm:mb-3 text-black">
                 Experential <br/>
-                <span className="font-marckscript text-[#0F715F]">Learning</span>
+                <span className="font-marckscript text-[#0F715F] text-4xl">Learning</span>
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-black">
                 Lorem ipsum dolor sit amet consectur.
               </p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <p className="pt-5 sm:pt-6 md:pt-8 text-white text-sm sm:text-base md:text-lg">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="pt-5 sm:pt-6 md:pt-8 text-white text-sm sm:text-base md:text-lg"
+        >
           Our curriculum is divided into three parts to provide holistic
           education that integrates academic excellence, values, and innovation.
-        </p>
+        </motion.p>
       </div>
     </div>
   );

@@ -39,6 +39,19 @@ const SLIDES = [
         'Empowering young minds to learn, grow, and thrive in a nurturing environment filled with creativity and joy.',
     },
   },
+  {
+    id: 3,
+    image: '/assets/hero/hero-1.png',
+    content: {
+      words: [
+        { text: 'Explore', color: '#FFA500' }, // orange
+        { text: 'Discover', color: '#00CED1' }, // turquoise
+        { text: 'Excel', color: '#9370DB' }, // medium purple
+      ],
+      description:
+        'Creating opportunities for children to explore their interests, discover their passions, and excel in their unique journey of growth.',
+    },
+  },
 ]
 
 const Hero = () => {

@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { Button } from "./ui/button";
+import { motion } from "framer-motion";
 
 type FacilityData = {
   id: number;
@@ -42,23 +46,59 @@ const facilitiesData: FacilityData[] = [
 ];
 
 const Facilities = () => {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
+
   return (
     <div className="w-full">
       <div className="max-w-7xl mx-auto py-8 sm:py-10 md:py-12 px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-start sm:items-center gap-4 text-[#0F715F] mb-6 sm:mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-between items-start sm:items-center gap-4 text-[#0F715F] mb-6 sm:mb-8"
+        >
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
             Our Facilities
           </h1>
-          <button className="rounded-tl-2xl rounded-br-2xl border border-[#0F715F] p-2 sm:p-3 px-4 sm:px-6 whitespace-nowrap text-sm sm:text-base hover:bg-[#0F715F] hover:text-white transition-colors duration-300">
-            View All Facilities
-          </button>
-        </div>
+          <Button variant="outline" effect="ringHover" className="rounded-none rounded-tl-2xl rounded-br-2xl bg-none border-[#0F715F] hover:ring-[#0F715F]/90 hover:text-[#0F715F] font-semibold cursor-pointer">
+          View All Facilities
+          </Button>
+        </motion.div>
 
         {/* Flex column on small screens, flex row on large screens */}
-        <div className="flex flex-col lg:flex-row gap-4 sm:gap-5 md:gap-6 w-full">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-col lg:flex-row gap-4 sm:gap-5 md:gap-6 w-full"
+        >
           {facilitiesData.map((facility) => (
-            <div
+            <motion.div
               key={facility.id}
+              variants={cardVariants}
               className={`${facility.bgColor} ${facility.borderRadius} text-white relative py-8 sm:py-10 aspect-square min-h-[250px] sm:min-h-[280px] md:min-h-[320px] lg:min-h-[350px] overflow-hidden flex-1`}
             >
               <Image
@@ -83,9 +123,9 @@ const Facilities = () => {
                   </React.Fragment>
                 ))}
               </h2>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

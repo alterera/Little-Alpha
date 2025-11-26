@@ -7,7 +7,9 @@ import { EmblaCarouselType } from "embla-carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useDotButton } from "./Hero/DotButtons";
 import { usePrevNextButtons } from "./Hero/ArrowButtons";
+import { motion } from "framer-motion";
 import "@/styles/embla.css";
+import Image from "next/image";
 
 type Testimonial = {
   id: number;
@@ -129,6 +131,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-16 sm:py-24 lg:py-32 relative">
+      <Image src={'/assets/bg/testimonial-bg.png'} height={200} width={1000} alt="bg-testimonial" className="absolute bottom-0 w-full" />
       <div className="container mx-auto md:px-4 sm:px-6 lg:px-8">
         <div className="relative">
           {/* Previous Button - Left Centered */}
@@ -183,11 +186,15 @@ const Testimonials = () => {
           <div className="overflow-hidden px-12 sm:px-16" ref={emblaRef}>
             <div className="flex">
               {TESTIMONIALS.map((testimonial) => (
-                <div
+                <motion.div
                   key={testimonial.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
                   className="shrink-0 w-full flex flex-col items-center text-center px-4"
                 >
-                  <p className="mb-8 sm:mb-16 max-w-4xl px-4 sm:px-8 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium leading-relaxed">
+                  <p className="mb-8 sm:mb-16 max-w-5xl px-4 sm:px-8 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium leading-relaxed">
                     &ldquo;{testimonial.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-3 sm:gap-4">
@@ -212,23 +219,9 @@ const Testimonials = () => {
                       </p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
-
-          {/* Dot Navigation */}
-          <div className="flex justify-center items-center gap-2 mt-8 sm:mt-12">
-            {scrollSnaps.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => onDotButtonClick(index)}
-                className={`embla__dot flex items-center justify-center rounded-full ${
-                  index === selectedIndex ? "embla__dot--selected" : ""
-                }`}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
           </div>
         </div>
       </div>

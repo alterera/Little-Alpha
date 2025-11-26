@@ -5,6 +5,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { EmblaCarouselType } from "embla-carousel";
 import { usePrevNextButtons } from "./Hero/ArrowButtons";
+import { motion } from "framer-motion";
 
 type BlogPost = {
   id: number;
@@ -80,7 +81,13 @@ const Blogs = () => {
         alt="blog background"
       />
       <div className="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between text-white mb-12 gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between text-white mb-12 gap-6"
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl">
             Stay updated with our weekly blog
           </h2>
@@ -103,14 +110,18 @@ const Blogs = () => {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <div className="relative -mx-4 sm:-mx-6 lg:-mx-8">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
               {BLOG_POSTS.map((post) => (
-                <div
+                <motion.div
                   key={post.id}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
                   className="shrink-0 w-full sm:w-[85%] md:w-[70%] lg:w-[45%] xl:w-[40%] px-4 sm:px-6 lg:px-8"
                 >
                   <div
@@ -147,7 +158,7 @@ const Blogs = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

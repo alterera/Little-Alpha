@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Campus = () => {
   return (
@@ -7,7 +10,13 @@ const Campus = () => {
       {/* Large Screen: Grid Layout (Text Left, Image Right, then Image Left, Text Right) */}
       <div className="hidden lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-0">
         {/* First Row: Text Left, Image Right */}
-        <div className="bg-[#E1F8DC] p-8 xl:p-12 flex flex-col gap-6 xl:gap-10">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-[#E1F8DC] p-8 xl:p-12 flex flex-col gap-6 xl:gap-10"
+        >
           <h2 className="text-3xl xl:text-4xl 2xl:text-5xl text-[#0F715F] font-bold leading-tight">
             Building a love for <br />
             Learning
@@ -35,26 +44,44 @@ const Campus = () => {
               Read More
             </p>
           </div>
-        </div>
-        <div className="relative min-h-[400px] xl:min-h-[500px]">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative min-h-[400px] xl:min-h-[500px]"
+        >
           <Image
             src={"/assets/campus/welcome.png"}
             fill
             alt="campus 1"
             className="object-cover"
           />
-        </div>
+        </motion.div>
 
         {/* Second Row: Image Left, Text Right */}
-        <div className="row-start-2 relative min-h-[400px] xl:min-h-[500px]">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="row-start-2 relative min-h-[400px] xl:min-h-[500px]"
+        >
           <Image
             src={"/assets/campus/welcome.png"}
             fill
             alt="campus 2"
             className="object-cover"
           />
-        </div>
-        <div className="row-start-2 bg-[#FF81B9]/15 p-8 xl:p-12 flex flex-col gap-6 xl:gap-10">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="row-start-2 bg-[#FF81B9]/15 p-8 xl:p-12 flex flex-col gap-6 xl:gap-10"
+        >
           <h2 className="text-3xl xl:text-4xl 2xl:text-5xl text-[#E15E89] font-bold leading-tight">
             A school for the <br />
             real world
@@ -82,13 +109,19 @@ const Campus = () => {
               Read More
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Small Screen: Sequential Layout (Text, Image, Text, Image) */}
       <div className="flex flex-col lg:hidden">
         {/* First Text Block */}
-        <div className="bg-[#E1F8DC] p-6 sm:p-8 flex flex-col gap-4 sm:gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-[#E1F8DC] p-6 sm:p-8 flex flex-col gap-4 sm:gap-6"
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl text-[#0F715F] font-bold leading-tight">
             Building a love for <br />
             Learning
@@ -116,20 +149,32 @@ const Campus = () => {
               Read More
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* First Image */}
-        <div className="relative h-64 sm:h-80 md:h-96">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative h-64 sm:h-80 md:h-96"
+        >
           <Image
             src={"/assets/campus/welcome.png"}
             fill
             alt="campus 1"
             className="object-cover"
           />
-        </div>
+        </motion.div>
 
         {/* Second Text Block */}
-        <div className="bg-[#FF81B9]/15 p-6 sm:p-8 flex flex-col gap-4 sm:gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-[#FF81B9]/15 p-6 sm:p-8 flex flex-col gap-4 sm:gap-6"
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl text-[#E15E89] font-bold leading-tight">
             A school for the <br />
             real world
@@ -157,17 +202,23 @@ const Campus = () => {
               Read More
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Second Image */}
-        <div className="relative h-64 sm:h-80 md:h-96">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative h-64 sm:h-80 md:h-96"
+        >
           <Image
             src={"/assets/campus/welcome.png"}
             fill
             alt="campus 2"
             className="object-cover"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

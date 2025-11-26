@@ -6,11 +6,13 @@ import CTA from "@/components/CTA";
 import Curriculum from "@/components/Curriculum";
 import Facilities from "@/components/Facilities";
 import Featured from "@/components/Featured";
+import Gallery from "@/components/Gallery";
 import Growth from "@/components/Growth";
 import Hero from "@/components/Hero/Hero";
 import Learner from "@/components/Learner";
 import Quote from "@/components/Quote";
 import Testimonials from "@/components/Testimonials";
+import Topbar from "@/components/Topbar";
 import Video from "@/components/Video";
 import Welcome from "@/components/Welcome";
 import Image from "next/image";
@@ -18,6 +20,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
+      <Topbar />
       <Navbar />
       <Hero />
       {/* <Featured /> */}
@@ -32,6 +35,7 @@ export default function Home() {
       <CTA />
       <Testimonials />
       <Blogs />
+      <Gallery />
       <Footer />
     </div>
   );

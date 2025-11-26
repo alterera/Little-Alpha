@@ -1,7 +1,10 @@
+"use client";
+
 import { Facebook, Instagram, Linkedin, Mail, Phone, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 // Constants for footer content
 const QUICK_LINKS = [
@@ -47,17 +50,29 @@ const Footer = () => {
   return (
     <div className="w-full bg-[#EBF6EB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+        >
           {/* Logo and Quick Links */}
-          <div className="flex flex-col gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex flex-col gap-6"
+          >
             <Image 
               src={"/logo-black.png"} 
               height={150} 
               width={150} 
               alt="logo-footer"
-              className="w-auto h-auto"
+              className=""
             />
-            <div className="flex flex-col gap-3 pl-3">
+            <div className="hidden md:flex flex-col gap-3 pl-3">
               {QUICK_LINKS.map((link, index) => (
                 <Link 
                   key={index}
@@ -68,10 +83,16 @@ const Footer = () => {
                 </Link>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Useful Links */}
-          <div className="flex flex-col gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col gap-4"
+          >
             <h2 className="text-[#0F715F] font-bold text-lg md:text-xl mb-2">
               Useful Links
             </h2>
@@ -80,16 +101,22 @@ const Footer = () => {
                 <Link 
                   key={index}
                   href={link.href}
-                  className="text-gray-700 hover:text-[#0F715F] transition-colors duration-200 text-sm md:text-base"
+                  className="text-gray-700 hover:text-[#0F715F] font-medium transition-colors duration-200 text-sm md:text-base"
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Resources */}
-          <div className="flex flex-col gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col gap-4"
+          >
             <h2 className="text-[#0F715F] font-bold text-lg md:text-xl mb-2">
               Resources
             </h2>
@@ -98,34 +125,40 @@ const Footer = () => {
                 <Link 
                   key={index}
                   href={resource.href}
-                  className="text-gray-700 hover:text-[#0F715F] transition-colors duration-200 text-sm md:text-base"
+                  className="text-gray-700 hover:text-[#0F715F] font-medium transition-colors duration-200 text-sm md:text-base"
                 >
                   {resource.label}
                 </Link>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Reach Us */}
-          <div className="flex flex-col gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col gap-6"
+          >
             <h2 className="text-[#0F715F] font-bold text-lg md:text-xl mb-2">
               Reach Us
             </h2>
             <div className="flex flex-col gap-4">
-              <address className="text-gray-700 text-sm md:text-base not-italic leading-relaxed">
+              <address className="text-gray-700 text-sm md:text-base not-italic font-medium leading-relaxed">
                 {CONTACT_INFO.address}
               </address>
               <div className="flex flex-col gap-3">
                 <Link 
                   href={CONTACT_INFO.email.href} 
-                  className="flex items-center gap-2 text-gray-700 hover:text-[#0F715F] transition-colors duration-200 text-sm md:text-base"
+                  className="flex items-center gap-2 text-gray-700 font-medium hover:text-[#0F715F] transition-colors duration-200 text-sm md:text-base"
                 >
                   <Mail size={16} className="shrink-0" />
                   <span>{CONTACT_INFO.email.label}</span>
                 </Link>
                 <Link 
                   href={CONTACT_INFO.phone.href} 
-                  className="flex items-center gap-2 text-gray-700 hover:text-[#0F715F] transition-colors duration-200 text-sm md:text-base"
+                  className="flex items-center gap-2 text-gray-700 font-medium hover:text-[#0F715F] transition-colors duration-200 text-sm md:text-base"
                 >
                   <Phone size={16} className="shrink-0" />
                   <span>{CONTACT_INFO.phone.label}</span>
@@ -154,19 +187,25 @@ const Footer = () => {
                 })}
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
       
       {/* Copyright Section */}
-      <div className="bg-[#0F715F] w-full">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="bg-[#0F715F] w-full"
+      >
         <div className="w-full px-4 sm:px-6 lg:px-8 py-2">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 text-white text-xs sm:text-sm">
             <p className="text-center sm:text-left">{COPYRIGHT.text}</p>
             <p className="text-center sm:text-right">{COPYRIGHT.developer}</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
