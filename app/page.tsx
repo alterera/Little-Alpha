@@ -11,6 +11,7 @@ import Hero from "@/components/Hero/Hero";
 import Learner from "@/components/Learner";
 import Quote from "@/components/Quote";
 import Testimonials from "@/components/Testimonials";
+import Video from "@/components/Video";
 import Welcome from "@/components/Welcome";
 import Image from "next/image";
 
@@ -19,7 +20,7 @@ export default function Home() {
     <div>
       <Navbar />
       <Hero />
-      <Featured />
+      {/* <Featured /> */}
       <Welcome />
       <Curriculum />
       <Facilities />
@@ -27,6 +28,7 @@ export default function Home() {
       <Campus />
       <Growth />
       <Learner />
+      <Video />
       <CTA />
       <Testimonials />
       <Blogs />

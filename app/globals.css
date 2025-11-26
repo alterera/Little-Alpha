@@ -137,15 +137,13 @@
   }
 }
 
+/* Custom Font Classes */
+.font-marckscript {
+  font-family: var(--font-marckscript);
+}
+
 /* CTA Parallax Background Effect */
 .cta-parallax-bg {
   background-attachment: fixed;
   min-height: 100%;
-}
-
-/* Fallback for mobile devices */
-@media (max-width: 768px) {
-  .cta-parallax-bg {
-    background-attachment: scroll;
-  }
 }

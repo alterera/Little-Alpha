@@ -1,21 +1,120 @@
-"use client"
+"use client";
 
-import React from "react";
+import React, { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { toast } from "sonner";
+
+type FormData = {
+  name: string;
+  phone: string;
+  childName: string;
+  childAge: string;
+  message: string;
+};
 
 const CTA = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    phone: "",
+    childName: "",
+    childAge: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleAgeChange = (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      childAge: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Basic validation
+    if (!formData.name.trim()) {
+      toast.error("Please enter your name");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!formData.phone.trim()) {
+      toast.error("Please enter your phone number");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!formData.childName.trim()) {
+      toast.error("Please enter your child's name");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!formData.childAge) {
+      toast.error("Please select your child's age");
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Email validation (only if provided)
+    // Simulate form submission
+    try {
+      // Here you would typically send the data to your API
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      toast.success("Form submitted successfully! We'll get back to you soon.", {
+        description: "Thank you for your interest in Little Alpha.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        phone: "",
+        childName: "",
+        childAge: "",
+        message: "",
+      });
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <div className="w-full relative overflow-hidden min-h-[800px]">
+    <div className="w-full relative overflow-hidden">
       {/* Parallax Background */}
-      <div 
+      <div
         className="absolute inset-0 z-0 cta-parallax-bg"
         style={{
-          backgroundImage: 'url(/assets/bg/cta.webp)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          backgroundImage: "url(/assets/bg/cta.webp)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
         }}
       />
-      
+
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
@@ -30,8 +129,8 @@ const CTA = () => {
             <p className="text-lg md:text-xl mb-8 leading-relaxed opacity-90">
               At Little Alpha, our ultimate aim is to ignite critical thinking. We
               strictly do not promote rote learning. Inquiry-based learning is the
-              backbone of our methodology. We want every learner to think,
-              explore, and learn.
+              backbone of our methodology. We want every learner to think, explore,
+              and learn.
             </p>
             <button className="bg-[#0C7C55] hover:bg-[#0a6b4a] text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 w-fit">
               Learn More
@@ -50,87 +149,85 @@ const CTA = () => {
               </p>
             </div>
 
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Name
-                  </label>
-                  <input
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="name" className="text-gray-700">
+                    Name <span className="text-red-500">*</span>
+                  </Label>
+                  <Input
                     type="text"
                     id="name"
+                    name="name"
                     placeholder="Your name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0C7C55] focus:border-transparent transition-all"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="h-11"
                   />
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="Enter your mail"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0C7C55] focus:border-transparent transition-all"
+                <div className="space-y-2">
+                  <Label htmlFor="phone" className="text-gray-700">
+                    Phone <span className="text-red-500">*</span>
+                  </Label>
+                  <Input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Contact number"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    required
+                    className="h-11"
                   />
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  placeholder="Contact number"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0C7C55] focus:border-transparent transition-all"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="childName" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Children Name
-                  </label>
-                  <input
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="childName" className="text-gray-700">
+                    Children Name <span className="text-red-500">*</span>
+                  </Label>
+                  <Input
                     type="text"
                     id="childName"
+                    name="childName"
                     placeholder="Your child name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0C7C55] focus:border-transparent transition-all"
+                    value={formData.childName}
+                    onChange={handleInputChange}
+                    required
+                    className="h-11"
                   />
                 </div>
-                <div>
-                  <label htmlFor="childAge" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Child Age
-                  </label>
-                  <input
-                    type="number"
-                    id="childAge"
-                    placeholder="Your child age"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0C7C55] focus:border-transparent transition-all"
-                  />
+                <div className="space-y-2">
+                  <Label htmlFor="childAge" className="text-gray-700">
+                    Child Age <span className="text-red-500">*</span>
+                  </Label>
+                  <Select
+                    value={formData.childAge}
+                    onValueChange={handleAgeChange}
+                    required
+                  >
+                    <SelectTrigger className="h-11 w-full">
+                      <SelectValue placeholder="Select age" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {[1, 2, 3, 4, 5, 6].map((age) => (
+                        <SelectItem key={age} value={age.toString()}>
+                          {age} {age === 1 ? "year" : "years"}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Message (optional)
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  placeholder="Your message here..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0C7C55] focus:border-transparent transition-all resize-none"
-                />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#0C7C55] hover:bg-[#0a6b4a] text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 mt-6"
+                disabled={isSubmitting}
+                className="w-full bg-[#0C7C55] hover:bg-[#0a6b4a] disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 mt-6"
               >
-                Submit
+                {isSubmitting ? "Submitting..." : "Submit"}
               </button>
             </form>
           </div>

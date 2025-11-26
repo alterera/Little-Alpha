@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Quicksand, Geist_Mono, Marck_Script } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const quicksand = Quicksand({
+  variable: "--font-quicksand",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const marckscript = Marck_Script({
+  variable: "--font-marckscript",
   subsets: ["latin"],
+  weight: "400",
 });
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full`}
+        className={`${quicksand.variable} ${marckscript.variable} antialiased w-full font-sans`}
+        style={{ fontFamily: "var(--font-quicksand)" }}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );
