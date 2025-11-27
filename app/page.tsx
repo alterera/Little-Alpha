@@ -21,12 +21,11 @@ export default function Home() {
   return (
     <div>
       <Topbar />
-      <Navbar />
       <Hero />
       {/* <Featured /> */}
       <Welcome />
       <Curriculum />
-      <Facilities />
+      {/* <Facilities /> */}
       <Quote />
       <Campus />
       <Growth />
@@ -36,7 +35,6 @@ export default function Home() {
       <Testimonials />
       <Blogs />
       <Gallery />
-      <Footer />
     </div>
   );
 }

@@ -7,6 +7,20 @@ import Image from "next/image";
 const Learner = () => {
   return (
     <div className="w-full relative bg-white pt-14 sm:pt-16 md:pt-20">
+      <Image
+        src={"/assets/bg/copy.png"}
+        fill
+        alt="bg"
+        className="object-cover"
+      />
+      <Image
+        src={"/assets/shapes/multi-hands.svg"}
+        height={150}
+        width={220}
+        alt="hands"
+        className="absolute left-0 bottom-22 sm:top-20 md:top-1/3 lg:top-1/4 w-20 sm:w-28 md:w-32 lg:w-40 pointer-events-none select-none z-10"
+        priority
+      />
       {/* Admission Button - 50% on Growth, 50% on Learner */}
       <div className="bg-[#0C7C55] rounded-full p-4 sm:p-5 h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 flex items-center justify-center text-white absolute left-1/2 -translate-x-1/2 -top-10 sm:-top-12 md:-top-14 shadow-lg uppercase text-xs sm:text-sm md:text-base font-semibold z-30">
         Admission

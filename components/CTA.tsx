@@ -151,7 +151,7 @@ const CTA = () => {
           >
             <div className="mb-6">
               <h4 className="text-2xl md:text-3xl font-bold text-[#0F715F] mb-3">
-                Fill out the form & we will get in touch with you!
+              Quick Contact With Us
               </h4>
               <p className="text-gray-600">
                 Enquire about the current educational year. Submit message & our

@@ -5,9 +5,10 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { href: "/who-we-are", label: "Who We Are" },
+  { href: "/about", label: "Who We Are" },
   { href: "/our-curriculum", label: "Our Curriculum" },
   { href: "/campus-life", label: "Campus Life" },
   { href: "/events", label: "Events" },
@@ -15,31 +16,61 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
+  const headerClasses = `left-0 w-full z-50 ${
+    isHomePage
+      ? "absolute top-[48px] sm:top-[52px] bg-transparent"
+      : "relative top-0 bg-white border-b"
+  }`;
+
+  const desktopLinkClasses = `${
+    isHomePage
+      ? "text-white after:bg-white"
+      : "text-[#0F715F] after:bg-[#0F715F]"
+  } font-medium hover:text-[#F75691]! transition-colors cursor-pointer`;
+
+  const mobileActionsText = isHomePage ? "text-white" : "text-[#0F715F]";
+  const mobileMenuButtonClasses = `p-2 rounded-full ${
+    isHomePage
+      ? "bg-white/20 hover:bg-white/30 text-white"
+      : "bg-black/10 hover:bg-black/20 text-[#0F715F]"
+  } transition`;
+
+  const logoSrc = isHomePage ? "/logo-white.png" : "/logo-black.png";
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="absolute top-[48px] sm:top-[52px] left-0 w-full z-40 bg-transparent">
+    <header className={headerClasses}>
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4">
-        <Image
-          src={"/logo-white.png"}
-          height={80}
-          width={200}
-          alt="little alpha play school logo"
-          className="w-[100px] sm:w-[180px] md:w-[140px]"
-        />
+        <Link href="/">
+          <Image
+            src={logoSrc}
+            height={80}
+            width={200}
+            alt="little alpha play school logo"
+            className="w-[100px] sm:w-[180px] md:w-[140px]"
+            priority
+          />
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8 lg:gap-10">
-          <ul className="flex gap-6 lg:gap-10 text-sm lg:text-base">
+          <ul
+            className={`flex gap-6 lg:gap-10 text-sm lg:text-base ${
+              isHomePage ? "text-white" : "text-[#0F715F]"
+            }`}
+          >
             {navLinks.map((item) => (
               <li key={item.href}>
                 <Link href={item.href}>
                   <Button
                     variant="link"
                     effect="hoverUnderline"
-                    className="text-white! font-medium hover:text-[#F75691]! transition-colors cursor-pointer after:bg-white"
+                    className={`${desktopLinkClasses}`}
                   >
                     {item.label}
                   </Button>
@@ -61,7 +92,9 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Actions */}
-        <div className="flex md:hidden items-center gap-3 text-white">
+        <div
+          className={`flex md:hidden items-center gap-3 ${mobileActionsText}`}
+        >
           <Button
             effect="shine"
             className="rounded-none rounded-tl-2xl rounded-br-2xl bg-[#0F715F] hover:text-white hover:bg-[#F75691] hover:cursor-pointer hover:shadow-xl"
@@ -71,7 +104,7 @@ const Navbar = () => {
           <button
             onClick={toggleMenu}
             aria-label="Toggle navigation menu"
-            className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition"
+            className={mobileMenuButtonClasses}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -122,7 +155,7 @@ const Navbar = () => {
         <button
           aria-label="Close menu overlay"
           onClick={closeMenu}
-          className="fixed inset-0 bg-black/40 z-[90] md:hidden"
+          className="fixed inset-0 bg-black/40 z-90 md:hidden"
         />
       )}
     </header>

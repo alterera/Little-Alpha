@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Quicksand, Geist_Mono, Marck_Script } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import NextTopLoader from 'nextjs-toploader';
+import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -14,7 +17,6 @@ const marckscript = Marck_Script({
   subsets: ["latin"],
   weight: "400",
 });
-
 
 export const metadata: Metadata = {
   title: "Little Alpha Bikaner | Discover Bright Beginnings",
@@ -32,8 +34,11 @@ export default function RootLayout({
         className={`${quicksand.variable} ${marckscript.variable} antialiased w-full font-sans`}
         style={{ fontFamily: "var(--font-quicksand)" }}
       >
+        <Navbar />
+        <NextTopLoader />
         {children}
         <Toaster />
+        <Footer />
       </body>
     </html>
   );

@@ -49,7 +49,23 @@ const COPYRIGHT = {
 const Footer = () => {
   return (
     <div className="w-full bg-[#EBF6EB]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 relative">
+      <Image 
+        src={'/assets/shapes/sharp-curve.svg'} 
+        height={100} 
+        width={300} 
+        alt="footer-shape" 
+        className="absolute -bottom-0.5 right-0 w-40 sm:w-56 md:w-52 lg:w-72 opacity-30 pointer-events-none select-none"
+        priority
+      />
+      <Image 
+        src={'/assets/icons/grass.png'} 
+        height={100} 
+        width={200} 
+        alt="footer-grass" 
+        className="absolute bottom-0 left-4 sm:left-10 md:left-16 lg:left-24 w-28 sm:w-40 md:w-56 lg:w-72 pointer-events-none select-none"
+        priority={false}
+      />
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -101,7 +117,7 @@ const Footer = () => {
                 <Link 
                   key={index}
                   href={link.href}
-                  className="text-gray-700 hover:text-[#0F715F] font-medium transition-colors duration-200 text-sm md:text-base"
+                  className="text-gray-700 hover:text-[#0F715F] font-medium transition-colors duration-200 text-sm md:text-base w-fit"
                 >
                   {link.label}
                 </Link>
