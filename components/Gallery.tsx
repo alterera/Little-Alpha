@@ -1,6 +1,54 @@
+"use client";
+
 import React from 'react'
 import { Button } from './ui/button'
 import Image from 'next/image'
+import Link from 'next/link'
+import { Camera } from 'lucide-react'
+import useEmblaCarousel from 'embla-carousel-react'
+
+const galleryImages = [
+  { id: 1, src: '/assets/blog-1.png', alt: 'Creative moments', rotation: 12 },
+  { id: 2, src: '/assets/blog-1.png', alt: 'Fun activities', rotation: -10 },
+  { id: 3, src: '/assets/blog-1.png', alt: 'Joyful learning', rotation: 15 },
+  { id: 4, src: '/assets/blog-1.png', alt: 'Play time', rotation: -6 },
+]
+
+const MobileGalleryCarousel = () => {
+  const [emblaRef] = useEmblaCarousel({
+    align: 'start',
+    loop: false,
+    skipSnaps: false,
+  })
+
+  return (
+    <div className="md:hidden mt-12 sm:mt-16 md:mt-20">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex gap-4">
+          {galleryImages.map((image) => (
+            <Link
+              key={`mobile-${image.id}`}
+              href="/gallery"
+              className="relative group shrink-0 w-[75%]"
+            >
+              <div className="relative w-full aspect-4/3 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src={image.src}
+                  fill
+                  alt={image.alt}
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-[#f54900]/0 group-hover:bg-[#f54900]/80 transition-colors duration-300 flex items-center justify-center">
+                  <Camera className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const Gallery = () => {
   return (
@@ -45,36 +93,32 @@ const Gallery = () => {
                 </Button>
             </div>
 
-            {/* Gallery Images Section - Responsive */}
-            <div className='mt-12 sm:mt-16 md:mt-20 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 overflow-visible'>
-                <div className='relative w-full sm:w-auto flex justify-end'>
-                  <Image 
-                    src={'/assets/blog-1.png'} 
-                    height={400} 
-                    width={400} 
-                    alt='gallery' 
-                    className='rotate-12 w-fit sm:w-[100px] md:w-[250px] lg:w-[300px] xl:w-[350px] h-auto rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300'
-                  />
-                </div>
-                <div className='relative w-fit sm:w-auto -mt-4 sm:mt-0 sm:-ml-4 md:-ml-6 lg:-ml-8'>
-                  <Image 
-                    src={'/assets/blog-1.png'} 
-                    height={400} 
-                    width={400} 
-                    alt='gallery' 
-                    className='-rotate-10 w-fit sm:w-[200px] md:w-[250px] lg:w-[300px] xl:w-[350px] h-auto rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300'
-                  />
-                </div>
-                <div className='relative w-full sm:w-auto -mt-4 sm:mt-0 sm:-ml-4 md:-ml-6 lg:-ml-8'>
-                  <Image 
-                    src={'/assets/blog-1.png'} 
-                    height={400} 
-                    width={400} 
-                    alt='gallery' 
-                    className='rotate-15 w-fit sm:w-[200px] md:w-[250px] lg:w-[300px] xl:w-[350px] h-auto rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300'
-                  />
-                </div>
+            {/* Desktop / Tablet Collage */}
+            <div className='hidden md:flex items-center justify-center gap-6 lg:gap-8 xl:gap-10 overflow-visible mt-12 sm:mt-16 md:mt-20'>
+                {galleryImages.map((image, index) => (
+                  <Link
+                    key={`desktop-${image.id}`}
+                    href="/gallery"
+                    className={`relative group ${index !== 0 ? '-ml-4 lg:-ml-6 xl:-ml-8' : ''}`}
+                    style={{ transform: `rotate(${image.rotation}deg)` }}
+                  >
+                    <div className='relative w-[220px] md:w-[250px] lg:w-[300px] xl:w-[350px] h-[260px] md:h-[300px] lg:h-[360px] xl:h-[420px] rounded-xl lg:rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:z-50'>
+                      <Image 
+                        src={image.src} 
+                        fill
+                        alt={image.alt} 
+                        className='object-cover transition-transform duration-300 group-hover:scale-110'
+                      />
+                      <div className='absolute inset-0 bg-[#f54900]/0 group-hover:bg-[#f54900]/80 transition-colors duration-300 flex items-center justify-center'>
+                        <Camera className='w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+                      </div>
+                    </div>
+                  </Link>
+                ))}
             </div>
+
+            {/* Mobile Carousel */}
+            <MobileGalleryCarousel />
         </div>
     </div>
   )

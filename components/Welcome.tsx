@@ -64,7 +64,7 @@ const Welcome = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold pb-4 sm:pb-5 md:pb-6 uppercase text-[#0F715F]'
+            className='text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold pb-4 sm:pb-5 md:pb-6 uppercase text-[#0F715F]'
           >
             Little Alpha Play School
           </motion.h2>

@@ -117,7 +117,7 @@ const CTA = () => {
       />
 
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
+      <div className="absolute inset-0 bg-black/50 z-10" />
 
       {/* Content */}
       <div className="relative z-20 max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
@@ -133,7 +133,7 @@ const CTA = () => {
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Let your child join the fun with Little Alpha
             </h2>
-            <p className="text-lg md:text-xl mb-8 leading-relaxed opacity-90">
+            <p className="text-lg md:text-xl md:leading-relaxed opacity-90">
               At Little Alpha, our ultimate aim is to ignite critical thinking. We
               strictly do not promote rote learning. Inquiry-based learning is the
               backbone of our methodology. We want every learner to think, explore,

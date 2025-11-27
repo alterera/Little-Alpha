@@ -9,24 +9,24 @@ const CounterData = [
   {
     count: 100,
     color: "E4282E",
-    title: "Years of Experience"
+    title: "Years of Experience",
   },
   {
     count: 53,
     color: "0C7C55",
-    title: "Awards Won"
+    title: "Awards Won",
   },
   {
     count: 500,
     color: "D63E75",
-    title: "Students Enrolled"
+    title: "Students Enrolled",
   },
   {
     count: 34,
     color: "6C3891",
-    title: "Expert Faculty"
+    title: "Expert Faculty",
   },
-]
+];
 
 const Growth = () => {
   // Animation variants
@@ -120,7 +120,11 @@ const Growth = () => {
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
                 style={{ color: `#${data.color}` }}
               >
-                <NumberTicker value={data.count} style={{ color: `#${data.color}` }} />+
+                <NumberTicker
+                  value={data.count}
+                  style={{ color: `#${data.color}` }}
+                />
+                +
               </h2>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-center text-gray-700">
                 {data.title}

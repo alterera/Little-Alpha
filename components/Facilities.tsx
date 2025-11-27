@@ -70,7 +70,13 @@ const Facilities = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full relative">
+      <Image
+        src={"/assets/bg/learner.png"}
+        fill
+        alt="bg"
+        className="object-cover"
+      />
       <div className="max-w-7xl mx-auto py-8 sm:py-10 md:py-12 px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -79,11 +85,15 @@ const Facilities = () => {
           transition={{ duration: 0.6 }}
           className="flex justify-between items-start sm:items-center gap-4 text-[#0F715F] mb-6 sm:mb-8"
         >
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold z-10">
             Our Facilities
           </h1>
-          <Button variant="outline" effect="ringHover" className="rounded-none rounded-tl-2xl rounded-br-2xl bg-none border-[#0F715F] hover:ring-[#0F715F]/90 hover:text-[#0F715F] font-semibold cursor-pointer">
-          View All Facilities
+          <Button
+            variant="outline"
+            effect="ringHover"
+            className="rounded-none z-10 rounded-tl-2xl rounded-br-2xl bg-[] border-[#0F715F] hover:ring-[#0F715F]/90 hover:bg-[#0F715F] hover:text-white font-semibold cursor-pointer"
+          >
+            View All Facilities
           </Button>
         </motion.div>
 
