@@ -22,7 +22,7 @@ const Navbar = () => {
   const headerClasses = `left-0 w-full z-50 ${
     isHomePage
       ? "absolute top-[48px] sm:top-[52px] bg-transparent"
-      : "relative top-0 bg-white border-b"
+      : "relative top-0 bg-white border-b border-[#dbecfb]"
   }`;
 
   const desktopLinkClasses = `${

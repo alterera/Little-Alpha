@@ -43,7 +43,7 @@ const Welcome = () => {
           repeatDelay: 0.5,
           ease: "easeInOut",
         }}
-        className="absolute z-0 top-20 sm:top-32 md:top-40 left-4 sm:left-10 md:left-20 opacity-20"
+        className="absolute z-0 top-20 sm:top-32 md:top-40 left-4 sm:left-10 md:left-20 opacity-10"
       >
         <Image
           src={'/assets/shapes/hand.svg'}
@@ -70,7 +70,7 @@ const Welcome = () => {
           </motion.h2>
           <motion.div
             variants={itemVariants}
-            className='space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed font-medium'
+            className='space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 text-base sm:text-lg md:text-lg leading-relaxed font-medium'
           >
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, ut! Maiores alias fugit tenetur magnam laborum, distinctio animi reprehenderit iste nihil praesentium ea cum sint, reiciendis voluptatem unde architecto dolorum id a dignissimos! Molestiae numquam quae voluptatum tenetur itaque. Minima nihil possimus asperiores dolor nesciunt accusamus dolores atque quaerat iure neque ex, suscipit, velit at est nostrum ullam repellendus facere.
@@ -84,7 +84,7 @@ const Welcome = () => {
             className='mt-6 sm:mt-8 md:mt-10 flex gap-2 items-baseline'
           >
             <div className='h-8 w-8 bg-pink-400 rounded-tr-full'></div>
-            <Link href={'/'} className="hover:text-[#0F715F] transition-colors">
+            <Link href={'/'} className="hover:text-[#0F715F] transition-colors font-semibold">
               Read More
             </Link>
           </motion.div>

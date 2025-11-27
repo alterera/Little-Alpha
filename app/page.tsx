@@ -27,11 +27,11 @@ export default function Home() {
       <Curriculum />
       {/* <Facilities /> */}
       <Quote />
-      <Campus />
+      {/* <Campus /> */}
       <Growth />
       <Learner />
       <Video />
-      <CTA />
+      {/* <CTA /> */}
       <Testimonials />
       <Blogs />
       <Gallery />

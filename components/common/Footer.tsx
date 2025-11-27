@@ -58,14 +58,14 @@ const Footer = () => {
         className="absolute -bottom-0.5 right-0 w-40 sm:w-56 md:w-52 lg:w-72 opacity-30 pointer-events-none select-none"
         priority
       />
-      <Image 
+      {/* <Image 
         src={'/assets/icons/grass.png'} 
         height={100} 
         width={200} 
         alt="footer-grass" 
         className="absolute bottom-0 left-4 sm:left-10 md:left-16 lg:left-24 w-28 sm:w-40 md:w-56 lg:w-72 pointer-events-none select-none"
         priority={false}
-      />
+      /> */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
