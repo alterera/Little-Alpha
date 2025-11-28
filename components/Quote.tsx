@@ -52,7 +52,7 @@ const Quote = () => {
             height={80}
             width={80}
             alt="quote"
-            className="absolute -top-12 -left-3 sm:-top-5 sm:-left-10 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:-top-20 md:-left-25 md:h-20 opacity-50"
+            className="absolute -top-12 -left-3 sm:-top-5 sm:-left-10 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:-top-10 md:-left-25 md:h-20 opacity-50"
           />
           <Image
             src={"/assets/shapes/quote.svg"}

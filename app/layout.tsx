@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Quicksand, Geist_Mono, Marck_Script } from "next/font/google";
+import { Quicksand, Marck_Script } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
-import NextTopLoader from 'nextjs-toploader';
+import NextTopLoader from "nextjs-toploader";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
+import SmoothScroll from "@/components/common/SmoothScroll";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -33,11 +34,13 @@ export default function RootLayout({
       <body
         className={`${quicksand.variable} ${marckscript.variable} antialiased w-full`}
       >
-        <Navbar />
-        <NextTopLoader />
-        {children}
-        <Toaster />
-        <Footer />
+        <SmoothScroll>
+          <Navbar />
+          <NextTopLoader />
+          {children}
+          <Toaster />
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

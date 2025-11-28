@@ -1,12 +1,69 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { useDotButton } from "./Hero/DotButtons";
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
 import "@/styles/embla.css";
+
+type CurriculumItem = {
+  id: number;
+  title: string;
+  titleHighlight: string;
+  description: string;
+  link: string;
+  bgColor: string;
+  textBgColor: string;
+  textColor: string;
+  highlightColor: string;
+};
+
+const curriculumData: CurriculumItem[] = [
+  {
+    id: 1,
+    title: "Inquiry Based",
+    titleHighlight: "Learning",
+    description: "Lorem ipsum dolor sit amet.",
+    link: "/curriculum/inquiry-based",
+    bgColor: "#DFC8FD",
+    textBgColor: "#DFC8FD",
+    textColor: "text-black",
+    highlightColor: "text-[#F75691]",
+  },
+  {
+    id: 2,
+    title: "Collaborative",
+    titleHighlight: "Spaces",
+    description: "Lorem ipsum dolor sit amet.",
+    link: "/curriculum/collaborative",
+    bgColor: "#704FE7",
+    textBgColor: "#704FE7",
+    textColor: "text-white",
+    highlightColor: "text-[#F4D548]",
+  },
+  {
+    id: 3,
+    title: "Experential",
+    titleHighlight: "Learning",
+    description: "Lorem ipsum dolor sit amet.",
+    link: "/curriculum/experiential",
+    bgColor: "#FFD463",
+    textBgColor: "#FFD463",
+    textColor: "text-black",
+    highlightColor: "text-[#0F715F]",
+  },
+];
+
+// Helper function to convert hex to rgba with opacity
+const hexToRgba = (hex: string, opacity: number): string => {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+};
 
 const Curriculum = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -75,6 +132,13 @@ const Curriculum = () => {
           alt="black-panthar"
           className="absolute right-0 top-10 hidden md:block z-10"
         />
+        <Image
+          src={"/assets/icons/airplane.svg"}
+          height={300}
+          width={150}
+          alt="airplane"
+          className="absolute -left-10 top-35 hidden md:block z-10"
+        />
       </motion.div>
       <div className="max-w-8xl mx-auto py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative z-20">
         <motion.h1
@@ -91,146 +155,45 @@ const Curriculum = () => {
         <div className="relative lg:hidden -mx-4 sm:-mx-6 lg:mx-0">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
-              {/* Box 1 - Inquiry Based Learning */}
-              <div className="shrink-0 w-full px-4 sm:px-6">
-                <motion.div
-                  variants={cardVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  className="bg-[#DFC8FD] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between"
-                >
-              <Image
-                    src="/assets/curriculum/circle.png"
-                    height={250}
-                    width={250}
-                alt="shape"
-                    className="absolute right-0 top-0 w-48 h-48 sm:w-64 sm:h-64 md:w-[200px] md:h-[200px]"
-              />
-                  <div className="relative flex items-center">
-                <Image
-                      src="/assets/curriculum/icon-bg.png"
-                  height={80}
-                  width={80}
-                  alt="icon bg"
-                      className="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24"
-                    />
-                    <Image
-                      src="/assets/curriculum/yellow-paint-tube.png"
-                      height={50}
-                      width={50}
-                      alt="icon"
-                      className="absolute left-5 w-12 h-12 sm:w-12 sm:h-12 md:w-[50px] md:h-[50px]"
-                    />
-                  </div>
-                  <div className="relative z-10">
-                    <h2 className="text-3xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-black">
-                      Inquiry Based <br/>
-                      <span className="font-marckscript text-pink-500 text-4xl">
-                        Learning
-                      </span>
-                    </h2>
-                    <p className="text-sm sm:text-base md:text-lg text-black">
-                      Lorem ipsum dolor sit amet consectur adipiscing elit sed do
-                      iusmod.
-                    </p>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Box 2 - Collaborative Spaces */}
-              <div className="shrink-0 w-full px-4 sm:px-6">
-                <motion.div
-                  variants={cardVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  className="bg-[#704FE7] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between"
-                >
-                  <Image
-                    src="/assets/curriculum/thunder.png"
-                    height={250}
-                    width={250}
-                    alt="shape"
-                    className="absolute right-0 top-0 w-48 h-48 sm:w-64 sm:h-64 md:w-[200px] md:h-[200px]"
-                  />
-                  <div className="relative flex items-center">
-                    <Image
-                      src="/assets/curriculum/icon-bg.png"
-                      height={80}
-                      width={80}
-                      alt="icon bg"
-                      className="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24"
-                    />
-                <Image
-                      src="/assets/curriculum/yellow-paint-tube.png"
-                  height={50}
-                  width={50}
-                  alt="icon"
-                      className="absolute left-5 w-12 h-12 sm:w-12 sm:h-12 md:w-[50px] md:h-[50px]"
-                    />
-                  </div>
-                  <div className="relative z-10">
-                    <h2 className="text-3xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-white">
-                      Collaborative<br/>
-                      <span className="font-marckscript text-4xl text-yellow-400">
-                        Spaces
-                      </span>
-                    </h2>
-                    <p className="text-sm sm:text-base md:text-lg text-white">
-                      Lorem ipsum dolor sit amet consectur adipiscing elit sed do
-                      iusmod.
-                    </p>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Box 3 - Experential Learning */}
-              <div className="shrink-0 w-full px-4 sm:px-6">
-                <motion.div
-                  variants={cardVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  className="bg-[#FFD463] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between"
-                >
-                  <Image
-                    src="/assets/curriculum/star.png"
-                    height={250}
-                    width={250}
-                    alt="shape"
-                    className="absolute right-0 top-0 w-48 h-48 sm:w-64 sm:h-64 md:w-[200px] md:h-[200px]"
-                  />
-                  <div className="relative flex items-center">
-                    <Image
-                      src="/assets/curriculum/icon-bg.png"
-                      height={80}
-                      width={80}
-                      alt="icon bg"
-                      className="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24"
-                    />
-                    <Image
-                      src="/assets/curriculum/yellow-paint-tube.png"
-                      height={50}
-                      width={50}
-                      alt="icon"
-                      className="absolute left-5 w-12 h-12 sm:w-12 sm:h-12 md:w-[50px] md:h-[50px]"
-                    />
-                  </div>
-                  <div className="relative z-10">
-                    <h2 className="text-3xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-black">
-                      Experential <br/>
-                      <span className="font-marckscript text-4xl text-green-600">
-                        Learning
-                      </span>
-                    </h2>
-                    <p className="text-sm sm:text-base md:text-lg text-black">
-                      Lorem ipsum dolor sit amet consectur adipiscing elit sed do
-                      iusmod.
-                    </p>
-                  </div>
-                </motion.div>
-              </div>
+              {curriculumData.map((item) => (
+                <div key={item.id} className="shrink-0 w-full px-4 sm:px-6">
+                  <Link href={item.link}>
+                    <motion.div
+                      variants={cardVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="relative aspect-[9/10] sm:aspect-[2/3] md:aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden group cursor-pointer"
+                      style={{ backgroundColor: item.bgColor }}
+                    >
+                      {/* Background Image */}
+                      <div className="absolute inset-0 overflow-hidden">
+                        <Image
+                          src="/assets/blog-1.png"
+                          fill
+                          alt={item.title}
+                          className="object-cover transition-transform duration-700 delay-150 ease-out group-hover:scale-110"
+                        />
+                      </div>
+                      
+                      {/* Text Content at Bottom */}
+                      <div 
+                        className="absolute bottom-0 left-0 right-0 p-8 md:p-8 lg:p-10 z-10"
+                        style={{ backgroundColor: hexToRgba(item.textBgColor, 0.85) }}
+                      >
+                        <h2 className={`text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 ${item.textColor}`}>
+                          {item.title} <span className={`font-marckscript text-2xl sm:text-3xl md:text-4xl lg:text-5xl ${item.highlightColor}`}>
+                            {item.titleHighlight}
+                          </span>
+                        </h2>
+                        <p className={`text-sm md:text-base lg:text-lg ${item.textColor} opacity-90`}>
+                          {item.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -257,122 +220,40 @@ const Curriculum = () => {
           viewport={{ once: true }}
           className="hidden lg:grid lg:grid-cols-3 gap-5 xl:gap-6"
         >
-          {/* Box 1 - Inquiry Based Learning */}
-          <motion.div
-            variants={cardVariants}
-            className="bg-[#DFC8FD] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between"
-          >
-            <Image
-              src="/assets/curriculum/circle.png"
-              height={250}
-              width={250}
-              alt="shape"
-              className="absolute right-0 top-0 w-48 h-48 sm:w-64 sm:h-64 md:w-[180px] md:h-[180px]"
-            />
-            <div className="relative flex items-center">
-              <Image
-                src="/assets/curriculum/icon-bg.png"
-                height={80}
-                width={80}
-                alt="icon bg"
-                className="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24"
-              />
-              <Image
-                src="/assets/curriculum/yellow-paint-tube.png"
-                height={50}
-                width={50}
-                alt="icon"
-                className="absolute left-5 w-12 h-12 sm:w-12 sm:h-12 md:w-[50px] md:h-[50px]"
-              />
-            </div>
-            <div className="relative z-10">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-2 sm:mb-3 text-black">
-                Inquiry Based <br/>
-                <span className="font-marckscript text-[#F75691] text-4xl">Learning</span>
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-black">
-                Lorem ipsum dolor sit amet consectur.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Box 2 - Collaborative Spaces */}
-          <motion.div
-            variants={cardVariants}
-            className="bg-[#704FE7] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between"
-          >
-            <Image
-              src="/assets/curriculum/thunder.png"
-              height={250}
-              width={250}
-              alt="shape"
-              className="absolute right-0 top-0 w-48 h-48 sm:w-64 sm:h-64 md:w-[180px] md:h-[180px]"
-            />
-            <div className="relative flex items-center">
-              <Image
-                src="/assets/curriculum/icon-bg.png"
-                height={80}
-                width={80}
-                alt="icon bg"
-                className="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24"
-              />
-              <Image
-                src="/assets/curriculum/yellow-paint-tube.png"
-                height={50}
-                width={50}
-                alt="icon"
-                className="absolute left-5 w-12 h-12 sm:w-12 sm:h-12 md:w-[50px] md:h-[50px]"
-              />
-            </div>
-            <div className="relative z-10">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-2 sm:mb-3 text-white">
-                Collaborative<br/>
-                <span className="font-marckscript text-[#F4D548] text-4xl">Spaces</span>
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-white">
-                Lorem ipsum dolor sit amet consectur.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Box 3 - Experential Learning */}
-          <motion.div
-            variants={cardVariants}
-            className="bg-[#FFD463] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 relative aspect-square flex flex-col justify-between"
-          >
-            <Image
-              src="/assets/curriculum/star.png"
-              height={250}
-              width={250}
-              alt="shape"
-              className="absolute right-0 top-0 w-48 h-48 sm:w-64 sm:h-64 md:w-[180px] md:h-[180px]"
-            />
-            <div className="relative flex items-center">
-              <Image
-                src="/assets/curriculum/icon-bg.png"
-                height={80}
-                width={80}
-                alt="icon bg"
-                className="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24"
-              />
-              <Image
-                src="/assets/curriculum/yellow-paint-tube.png"
-                height={50}
-                width={50}
-                alt="icon"
-                className="absolute left-5 w-12 h-12 sm:w-12 sm:h-12 md:w-[50px] md:h-[50px]"
-              />
-            </div>
-            <div className="relative z-10">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-2 sm:mb-3 text-black">
-                Experential <br/>
-                <span className="font-marckscript text-[#0F715F] text-4xl">Learning</span>
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-black">
-                Lorem ipsum dolor sit amet consectur.
-              </p>
-            </div>
-          </motion.div>
+          {curriculumData.map((item) => (
+            <Link key={item.id} href={item.link}>
+              <motion.div
+                variants={cardVariants}
+                className="relative aspect-3/4 lg:aspect-2/3 xl:aspect-3/4 rounded-2xl sm:rounded-3xl overflow-hidden group cursor-pointer"
+                style={{ backgroundColor: item.bgColor }}
+              >
+                {/* Background Image */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <Image
+                    src="/assets/blog-1.png"
+                    fill
+                    alt={item.title}
+                    className="object-cover transition-transform duration-700 delay-150 ease-out group-hover:scale-110"
+                  />
+                </div>
+                
+                {/* Text Content at Bottom */}
+                <div 
+                  className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 md:p-10 lg:p-8 xl:p-10 z-10"
+                  style={{ backgroundColor: hexToRgba(item.textBgColor, 0.85) }}
+                >
+                  <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-bold mb-2 sm:mb-3 ${item.textColor}`}>
+                    {item.title} <span className={`font-marckscript text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl ${item.highlightColor}`}>
+                      {item.titleHighlight}
+                    </span>
+                  </h2>
+                  <p className={`text-xs sm:text-sm md:text-base lg:text-sm xl:text-base ${item.textColor} opacity-90`}>
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            </Link>
+          ))}
         </motion.div>
 
         <motion.p

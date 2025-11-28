@@ -78,6 +78,13 @@ const Growth = () => {
           alt="crown"
           className="absolute left-0 bottom-10 hidden sm:block w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
         />
+        <Image
+          src={"/assets/icons/butterfly.svg"}
+          height={100}
+          width={100}
+          alt="butterfly"
+          className="absolute right-0 top-30 hidden sm:block w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
+        />
       </motion.div>
       <div className="max-w-7xl mx-auto py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
         <motion.h2
