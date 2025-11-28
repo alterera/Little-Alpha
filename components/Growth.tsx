@@ -94,7 +94,7 @@ const Growth = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-20"
+          className="text-center py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 max-w-6xl mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-20"
         >
           The story, which begins 5 years back with one preschool, resulted in a
           well-established leading preschool brand and writing a new chapter in

@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
+import HeroBanner from "@/components/common/HeroBanner";
 import Image from "next/image";
-import useEmblaCarousel from "embla-carousel-react";
 import Link from "next/link";
 
 const heroSlides = [
@@ -19,91 +19,16 @@ const quickLinks = [
 ];
 
 const AboutPage = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const scrollTo = useCallback(
-    (index: number) => {
-      if (!emblaApi) return;
-      emblaApi.scrollTo(index);
-    },
-    [emblaApi]
-  );
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    const autoPlay = setInterval(() => {
-      emblaApi.scrollNext();
-    }, 4500);
-    return () => clearInterval(autoPlay);
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
-    emblaApi.on("select", onSelect);
-    onSelect();
-    return () => {
-      emblaApi.off("select", onSelect);
-    };
-  }, [emblaApi]);
-
   return (
     <div className="w-full bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 lg:pb-16">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-8 sm:pb-12 lg:pb-16">
         <DynamicBreadcrumb className="py-6" />
 
-        {/* Hero Banner */}
-        <section className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] rounded-3xl overflow-hidden bg-[#0F715F] text-white shadow-xl">
-          <div className="flex flex-col justify-end gap-6 p-6 sm:p-10 min-h-[200px] sm:min-h-[280px]">
-            <p className="uppercase text-sm sm:text-base tracking-[0.3em] text-white/70">
-              Discover Little Alpha
-            </p>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-              Nurturing curious minds to become confident, compassionate
-              learners.
-            </h1>
-            <p className="text-white/80 text-sm sm:text-base lg:text-lg max-w-xl">
-              A joyful play school experience inspired by inquiry, creativity,
-              and a whole-child approach.
-            </p>
-          </div>
-
-          <div className="relative bg-white">
-            <div className="overflow-hidden h-[220px] sm:h-[300px] lg:h-full" ref={emblaRef}>
-              <div className="flex h-full">
-                {heroSlides.map((slide) => (
-                  <div
-                    key={slide.id}
-                    className="relative flex-[0_0_100%] h-full"
-                  >
-                    <Image
-                      src={slide.src}
-                      alt={slide.alt}
-                      fill
-                      className="object-cover"
-                      priority={slide.id === 1}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {heroSlides.map((_, index) => (
-                <button
-                  key={`dot-${index}`}
-                  aria-label={`Go to slide ${index + 1}`}
-                  onClick={() => scrollTo(index)}
-                  className={`h-3 w-8 rounded-full transition-all duration-300 ${
-                    selectedIndex === index
-                      ? "bg-[#F75691]"
-                      : "bg-white/60 hover:bg-white"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
+        <HeroBanner
+          subtitle="Discover Little Alpha"
+          title="About Little Alpha"
+          slides={heroSlides}
+        />
 
         {/* Content */}
         <section className="mt-10 lg:mt-14 flex flex-col lg:flex-row gap-10 relative">

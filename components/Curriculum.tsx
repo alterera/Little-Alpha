@@ -76,7 +76,7 @@ const Curriculum = () => {
           className="absolute right-0 top-10 hidden md:block z-10"
         />
       </motion.div>
-      <div className="max-w-7xl mx-auto py-8 sm:py-10 md:py-12 px-4 sm:px-6 lg:px-8 relative z-20">
+      <div className="max-w-8xl mx-auto py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative z-20">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

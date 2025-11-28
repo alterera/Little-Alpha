@@ -52,7 +52,7 @@ const MobileGalleryCarousel = () => {
 
 const Gallery = () => {
   return (
-    <div className="w-full bg-[#ffe4db] relative overflow-hidden">
+    <div className="w-full bg-[#EBF6EB] relative overflow-hidden">
       {/* Decorative Icons - Responsive positioning */}
       <Image
         src={"/assets/icons/sun.svg"}

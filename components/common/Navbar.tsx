@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, MoveUpRight, X } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/about", label: "Who We Are" },
-  { href: "/our-curriculum", label: "Our Curriculum" },
+  { href: "/curriculum", label: "Our Curriculum" },
   { href: "/campus-life", label: "Campus Life" },
   { href: "/events", label: "Events" },
 ];
@@ -45,7 +45,7 @@ const Navbar = () => {
 
   return (
     <header className={headerClasses}>
-      <nav className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4">
+      <nav className="max-w-8xl mx-auto flex justify-between items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4">
         <Link href="/">
           <Image
             src={logoSrc}
@@ -83,12 +83,14 @@ const Navbar = () => {
             Inquire Now
           </button> */}
 
-          <Button
-            effect="shine"
-            className="rounded-none rounded-tl-2xl rounded-br-2xl bg-[#0F715F] hover:text-white hover:bg-[#F75691] hover:cursor-pointer hover:shadow-xl"
-          >
-            Inquire Now
-          </Button>
+          <Link href={"/"}>
+            <Button
+              effect="shine"
+              className="rounded-none rounded-tl-2xl rounded-br-2xl bg-[#0F715F] hover:text-white hover:bg-[#F75691] hover:cursor-pointer hover:shadow-xl"
+            >
+              Inquire Now <MoveUpRight />
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Actions */}

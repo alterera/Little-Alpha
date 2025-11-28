@@ -31,8 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${quicksand.variable} ${marckscript.variable} antialiased w-full font-sans`}
-        style={{ fontFamily: "var(--font-quicksand)" }}
+        className={`${quicksand.variable} ${marckscript.variable} antialiased w-full`}
       >
         <Navbar />
         <NextTopLoader />

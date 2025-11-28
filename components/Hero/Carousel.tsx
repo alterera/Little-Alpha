@@ -99,7 +99,7 @@ const Carousel: React.FC<PropType> = (props) => {
                     initial="hidden"
                     animate="visible"
                     exit="hidden"
-                    className="absolute bottom-0 left-0 flex flex-col items-start justify-end z-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-8 sm:pb-12 md:pb-16 lg:pb-20"
+                    className="absolute bottom-0 md:bottom-30 left-0 flex flex-col items-start justify-end z-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-8 sm:pb-12 md:pb-16 lg:pb-20"
                   >
                     {/* Title with colored words */}
                     <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
