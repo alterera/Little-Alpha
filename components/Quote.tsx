@@ -3,6 +3,8 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 const Quote = () => {
   return (
@@ -63,8 +65,8 @@ const Quote = () => {
           />
           <div className="flex flex-col gap-4 sm:gap-6 relative z-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#0F715F] leading-tight sm:leading-snug md:leading-normal">
-              Learning is what happens <br className="hidden sm:block" /> when you are busy doing{" "}
-              <br className="hidden sm:block" />
+              Learning is what happens <br className="hidden sm:block" /> when
+              you are busy doing <br className="hidden sm:block" />
               something else.
             </h2>
             <p className="text-[#4F4F4F] text-base sm:text-lg md:text-xl">
@@ -72,7 +74,16 @@ const Quote = () => {
             </p>
             <div className="flex items-center gap-3 sm:gap-4 mt-2 sm:mt-5">
               <div className="h-10 w-10 sm:h-12 sm:w-12 bg-[#F4D548] rounded-full"></div>
-              <p className="uppercase text-sm sm:text-base font-medium">About Us</p>
+              {/* <p className="uppercase text-sm sm:text-base font-medium">About Us</p> */}
+              <Link href={"/about"}>
+                <Button
+                  variant="link"
+                  effect="underline"
+                  className="cursor-pointer"
+                >
+                  About Us
+                </Button>
+              </Link>
             </div>
           </div>
         </motion.div>

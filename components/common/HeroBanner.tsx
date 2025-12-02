@@ -61,7 +61,7 @@ const HeroBanner = ({
       className="grid grid-cols-1 lg:grid-cols-[0.8fr_1fr] rounded-2xl overflow-hidden text-white"
       style={{ backgroundColor }}
     >
-      <div className="flex flex-col justify-between gap-6 p-6 sm:p-10 min-h-[200px] sm:min-h-[280px]">
+      <div className="flex flex-col justify-between gap-6 p-6 sm:p-10 min-h-[300px] sm:min-h-[400px]">
         {subtitle && (
           <p className="uppercase text-sm sm:text-base tracking-[0.3em] text-white/70">
             {subtitle}

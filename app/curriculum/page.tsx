@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
 import HeroBanner from "@/components/common/HeroBanner";
 import Image from "next/image";
@@ -10,6 +11,34 @@ const curriculumSlides = [
   { id: 1, src: "/assets/blog-1.png", alt: "Curriculum overview" },
   { id: 2, src: "/assets/blog-1.png", alt: "Learning activities" },
   { id: 3, src: "/assets/blog-1.png", alt: "Student engagement" },
+];
+
+type CurriculumPathwayItem = {
+  id: number;
+  title: string;
+  description: string;
+  link: string;
+};
+
+const curriculumPathways: CurriculumPathwayItem[] = [
+  {
+    id: 1,
+    title: "Inquiry Based Learning",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, esse.",
+    link: "/curriculum/inquiry-based",
+  },
+  {
+    id: 2,
+    title: "Collaborative Spaces",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, esse.",
+    link: "/curriculum/collaborative",
+  },
+  {
+    id: 3,
+    title: "Experiential Learning",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, esse.",
+    link: "/curriculum/experiential",
+  },
 ];
 
 const CurriculumPage = () => {
@@ -78,21 +107,24 @@ const CurriculumPage = () => {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between gap-4 pt-5">
-                <div className="flex flex-col gap-4 justify-between bg-white p-10 items-center rounded-3xl">
-                    <h2 className="text-2xl font-bold">Inquiry Based Learning</h2>
-                    <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, esse.</p>
-                    <Button>Learn More</Button>
-                </div>
-                <div className="flex flex-col gap-4 justify-between bg-white p-10 items-center rounded-3xl">
-                    <h2 className="text-2xl font-bold">Collabrative Spaces</h2>
-                    <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, esse.</p>
-                    <Button>Learn More</Button>
-                </div>
-                <div className="flex flex-col gap-4 justify-between bg-white p-10 items-center rounded-3xl">
-                    <h2 className="text-2xl font-bold">Experiential Learning</h2>
-                    <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, esse.</p>
-                    <Button>Learn More</Button>
-                </div>
+            {curriculumPathways.map((pathway) => (
+              <Link
+                key={pathway.id}
+                href={pathway.link}
+                className="flex flex-col gap-4 justify-between bg-white p-10 items-center rounded-3xl relative overflow-hidden"
+              >
+                <Image
+                  src="/assets/bg/bg-logo.png"
+                  height={400}
+                  width={400}
+                  alt="bg logo"
+                  className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-10 pointer-events-none z-0"
+                />
+                <h2 className="text-2xl font-bold relative z-10">{pathway.title}</h2>
+                <p className="text-center relative z-10">{pathway.description}</p>
+                <Button className="relative z-10">Learn More</Button>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

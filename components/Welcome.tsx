@@ -66,16 +66,16 @@ const Welcome = () => {
             variants={itemVariants}
             className='text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold pb-4 sm:pb-5 md:pb-6 uppercase text-[#0F715F]'
           >
-            Little Alpha Play School
+            Welcome to Little Alpha
           </motion.h2>
           <motion.div
             variants={itemVariants}
             className='space-y-4 sm:space-y-5 md:space-y-6 text-gray-700 text-base sm:text-lg md:text-lg leading-relaxed font-medium'
           >
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, ut! Maiores alias fugit tenetur magnam laborum, distinctio animi reprehenderit iste nihil praesentium ea cum sint, reiciendis voluptatem unde architecto dolorum id a dignissimos! Molestiae numquam quae voluptatum tenetur itaque. Minima nihil possimus asperiores dolor nesciunt accusamus dolores atque quaerat iure neque ex, suscipit, velit at est nostrum ullam repellendus facere.
+            At Little Alpha, education is more than academics — it's a journey of growth, curiosity, and discovery. Our mission is to offer holistic learning that seamlessly brings together academic excellence, strong values, and innovative thinking. We are committed to nurturing young minds who can think critically, act responsibly, and grow into compassionate, globally aware citizens.
               <br/><br/>
-              Optio earum minima dolor ullam ad tempora, veniam dolores, aspernatur, sed aut consequuntur voluptatum amet iure illum? Beatae eaque culpa harum necessitatibus tenetur, pariatur doloremque sit et mollitia! Beatae distinctio quaerat, reiciendis consequuntur alias quo rem perferendis sint tempore unde.
+              At Little Alpha, holistic development is our priority. Through the integration of essential 21st-century skills, we ensure that every learner grows not just academically, but emotionally, socially, and creatively. Because here, every child is an Alpha - confident, curious, and ready to lead.
             </p>
           </motion.div>
 
@@ -84,7 +84,7 @@ const Welcome = () => {
             className='mt-6 sm:mt-8 md:mt-10 flex gap-2 items-baseline'
           >
             <div className='h-8 w-8 bg-pink-400 rounded-tr-full'></div>
-            <Link href={'/'} className="hover:text-[#0F715F] transition-colors font-semibold">
+            <Link href={'/about'} className="hover:text-[#0F715F] transition-colors font-semibold">
               Read More
             </Link>
           </motion.div>

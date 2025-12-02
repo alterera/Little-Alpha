@@ -129,35 +129,35 @@ const Blogs = () => {
                     style={{ backgroundColor: post.backgroundColor }}
                   >
                     <div className="relative w-full sm:w-1/2 h-48 sm:h-full">
-                      <Image
+              <Image
                         src={post.image}
-                        fill
+                fill
                         className="object-cover"
                         alt={post.title}
-                      />
-                    </div>
+              />
+            </div>
                     <div className="w-full sm:w-1/2 p-4 sm:p-6 text-white flex flex-col gap-3 sm:gap-4 justify-between">
                       <div className="flex flex-col gap-2 sm:gap-3">
                         <h4 className="text-xl sm:text-2xl lg:text-3xl font-semibold">
                           {post.title}
-                        </h4>
+              </h4>
                         <p className="text-sm sm:text-base line-clamp-3">
                           {post.description}
-                        </p>
+              </p>
                       </div>
-                      <div className="flex gap-2 items-center">
-                        <Image
-                          src={"/assets/shapes/triangle.svg"}
-                          height={20}
-                          width={20}
-                          alt="triangle"
-                        />
+              <div className="flex gap-2 items-center">
+                <Image
+                  src={"/assets/shapes/triangle.svg"}
+                  height={20}
+                  width={20}
+                  alt="triangle"
+                />
                         <button className="text-sm sm:text-base hover:underline">
                           Read More
                         </button>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+            </div>
+          </div>
                 </motion.div>
               ))}
             </div>

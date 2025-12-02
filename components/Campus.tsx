@@ -108,9 +108,9 @@ const Campus = () => {
             <p className="text-sm xl:text-base font-medium text-[#E15E89] cursor-pointer hover:underline">
               Read More
             </p>
-          </div>
+        </div>
         </motion.div>
-      </div>
+        </div>
 
       {/* Small Screen: Sequential Layout (Text, Image, Text, Image) */}
       <div className="flex flex-col lg:hidden">
@@ -148,7 +148,7 @@ const Campus = () => {
             <p className="text-sm sm:text-base font-medium text-[#0F715F] cursor-pointer hover:underline">
               Read More
             </p>
-          </div>
+        </div>
         </motion.div>
 
         {/* First Image */}
