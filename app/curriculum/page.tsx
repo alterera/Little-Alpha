@@ -24,19 +24,19 @@ const curriculumPathways: CurriculumPathwayItem[] = [
   {
     id: 1,
     title: "Inquiry Based Learning",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, esse.",
+    description: "Children explore questions, investigate ideas, and develop critical thinking through guided inquiry.",
     link: "/curriculum/inquiry-based-learning",
   },
   {
     id: 2,
     title: "Collaborative Spaces",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, esse.",
+    description: "Interactive group activities help children build communication, teamwork, and social understanding.",
     link: "/curriculum/collaborative-spaces",
   },
   {
     id: 3,
     title: "Experiential Learning",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, esse.",
+    description: "Hands-on activities and real-world experiences allow children to learn by doing and discover meaning through action.",
     link: "/curriculum/experiential-learning",
   },
 ];
@@ -48,8 +48,8 @@ const CurriculumPage = () => {
         <DynamicBreadcrumb className="py-6" />
 
         <HeroBanner
-          subtitle="Our Curriculum"
-          title="Learning journey"
+          subtitle="Learning Journey"
+          title="Our Curriculum"
           slides={curriculumSlides}
           backgroundColor="#D3465A"
         />
@@ -57,28 +57,15 @@ const CurriculumPage = () => {
         <div className="flex flex-col md:flex-row gap-5 pt-10">
           <div className="flex-1">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-              reiciendis dolor sed numquam magnam necessitatibus possimus nam
-              libero itaque sit quisquam quos aliquid quod blanditiis pariatur
-              labore iste voluptatum enim nemo modi eligendi laudantium,
-              delectus quibusdam? Voluptatum rerum officia error eligendi
-              eveniet, quaerat blanditiis alias tempora, placeat odio vitae
-              obcaecati?
+            At Little Alpha, we believe that early childhood is a time of wonder, exploration, and powerful developmental growth. Our curriculum is intentionally crafted to spark children's natural curiosity and guide them through meaningful learning experiences. Rooted in modern early-years pedagogy, we provide an environment where children feel safe, valued, and encouraged to take initiative in their learning journeys. Each day at Little Alpha is filled with opportunities to question, discover, create, collaborate, and reflect.
             </p>
             <br />
             <p>
-              Animi reiciendis dolor sed numquam magnam necessitatibus possimus
-              nam libero itaque sit quisquam quos aliquid quod blanditiis
-              pariatur labore iste voluptatum enim nemo modi eligendi
-              laudantium, delectus quibusdam? Voluptatum rerum officia error
-              eligendi eveniet, quaerat blanditiis alias tempora, placeat odio
-              vitae obcaecati?
+            By blending inquiry, hands-on activities, and social learning, our curriculum builds essential foundational skills while nurturing creativity, confidence, empathy, and a genuine love for learning.
             </p>
             <br />
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-              reiciendis dolor sed numquam magnam necessitatibus possimus nam
-              libero itaque sit quisquam.
+            We aim to shape well-rounded young learners who are prepared not just for school—but for life.
             </p>
           </div>
           <div className="flex-1 relative">
@@ -98,12 +85,7 @@ const CurriculumPage = () => {
               Little Alpha Curriculum Pathways
             </h2>
             <p className="pt-4 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Recusandae sed deserunt quis, deleniti, excepturi adipisci amet
-              exercitationem, eum ut sint vero perspiciatis? Cum fugiat quas,
-              dolore quis explicabo officiis facilis. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Saepe magnam voluptatem labore cum!
-              Itaque non eligendi suscipit repudiandae commodi rerum.
+            Our pathways highlight the core elements of our approach, offering children a balanced and enriching early-learning experience.
             </p>
           </div>
 

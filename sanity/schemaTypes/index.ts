@@ -1,5 +1,9 @@
-import { type SchemaTypeDefinition } from 'sanity'
+import campusLifeCategory from './campusLifeCategory'
+import campusLifeSubCategory from './campusLifeSubCategory'
+import campusLifeArticle from './campusLifeArticle'
 
-export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [],
-}
+export const schemaTypes = [
+  campusLifeCategory,
+  campusLifeSubCategory,
+  campusLifeArticle,
+]

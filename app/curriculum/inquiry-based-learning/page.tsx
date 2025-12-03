@@ -16,8 +16,8 @@ const page = () => {
         <DynamicBreadcrumb className="py-6" />
 
         <HeroBanner
-          subtitle="Our Curriculum"
-          title="Learning journey"
+          subtitle="Curriculum"
+          title="Inquiry Based Learning"
           slides={curriculumSlides}
           backgroundColor="#D3465A"
         />
@@ -37,18 +37,23 @@ const page = () => {
             </div>
             <div className="flex-1 space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-                quod aspernatur itaque, architecto repellat earum dolor
-                reprehenderit accusantium aliquid, quam provident cupiditate
-                veritatis consequatur fuga odio reiciendis non amet possimus!
+                At Little Alpha, Inquiry-Based Learning shapes every child's
+                experience by placing curiosity at the center of growth. We
+                believe that children are naturally inquisitive, and when given
+                the right environment, their questions become powerful learning
+                tools. Through carefully guided investigation, children explore
+                topics that genuinely interest them—whether it's how plants
+                grow, why objects sink or float, or what makes shadows change
+                shape.
               </p>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam culpa
-                dolorum distinctio nisi molestias aliquam iste neque magnam enim
-                facilis. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Harum quidem itaque atque dolore id vitae explicabo quam eaque modi
-                dolores neque, odio autem, consequuntur deleniti. Reprehenderit at
-                facilis odit animi.
+                Our educators serve as facilitators, encouraging children to
+                observe closely, think critically, and share their ideas with
+                confidence. Rather than simply providing answers, we help
+                children discover them through exploration, conversation, and
+                hands-on activities. This fosters independence, resilience, and
+                an early love for learning that stays with them well beyond
+                their kindergarten years.
               </p>
             </div>
           </div>
@@ -69,18 +74,18 @@ const page = () => {
             </div>
             <div className="flex-1 space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-                quod aspernatur itaque, architecto repellat earum dolor
-                reprehenderit accusantium aliquid, quam provident cupiditate
-                veritatis consequatur fuga odio reiciendis non amet possimus!
+                Inquiry begins with a spark—an idea, a question, or a moment of
+                curiosity that captures a child's attention. Our teachers take
+                these sparks and turn them into meaningful learning experiences
+                by creating opportunities for exploration, experimentation, and
+                reflection.
               </p>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam culpa
-                dolorum distinctio nisi molestias aliquam iste neque magnam enim
-                facilis. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Harum quidem itaque atque dolore id vitae explicabo quam eaque modi
-                dolores neque, odio autem, consequuntur deleniti. Reprehenderit at
-                facilis odit animi.
+                Children are encouraged to test their ideas, make predictions,
+                try new strategies, and revisit challenges with fresh
+                perspectives. They engage with a wide range of materials—natural
+                elements, sensory resources, loose parts, and interactive
+                learning tools—that inspire open-ended investigation.
               </p>
             </div>
           </div>
@@ -90,14 +95,15 @@ const page = () => {
         <section className="mt-10 sm:mt-12 lg:mt-16">
           <div className="max-w-5xl mx-auto bg-[#FCECEE] p-6 sm:p-10 md:p-12 lg:p-16 rounded-2xl">
             <p className="text-[#D3465A] text-center font-semibold text-lg sm:text-xl md:text-2xl leading-relaxed">
-              Our holistic approach ensures that socio-emotional, physical, and
-              cognitive development is supported during this sensitive time of
-              growth. As a PYP school, we provide a high-quality curriculum that
-              is both relevant and challenging, guiding our learners through
-              exciting transdisciplinary units of inquiry. This method integrates
-              appropriate skills and knowledge from various subject areas into
-              authentic and contextual units of inquiry, making their learning
-              experience meaningful and engaging.
+              Inquiry empowers children to think deeply, ask boldly, and explore
+              fearlessly, transforming every moment into an opportunity for
+              meaningful discovery. It encourages them to question the world
+              around them, to look beyond the obvious, and to engage with
+              learning in ways that spark imagination and ignite confidence. By
+              nurturing curiosity and valuing each child's unique ideas, inquiry
+              fosters a mindset of exploration and resilience—helping children
+              become thoughtful problem-solvers who aren't afraid to wonder,
+              experiment, and find their own answers.
             </p>
           </div>
         </section>
@@ -108,7 +114,7 @@ const page = () => {
             <div className="md:col-span-2">
               <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src={'/assets/blog-1.png'}
+                  src={"/assets/blog-1.png"}
                   fill
                   alt="Curriculum showcase"
                   className="object-cover"
@@ -117,18 +123,30 @@ const page = () => {
             </div>
             <div className="space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, totam nobis? 
-                Corporis officia, incidunt placeat obcaecati at maxime reprehenderit id amet 
-                possimus. Rem, eligendi cupiditate dolor dolorem quas assumenda repellendus.
+                Inquiry-Based Learning gives children the opportunity to become
+                active constructors of knowledge rather than passive recipients.
+                Through observing, questioning, experimenting, and analyzing,
+                they develop cognitive skills essential for future academic
+                success. Everyday moments—examining a leaf, building a bridge
+                from blocks, mixing colors, or watching insects—become rich
+                learning opportunities.
               </p>
             </div>
             <div className="space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita iusto placeat 
-                reiciendis voluptates in, ipsa iste ipsam officia eligendi magnam odio pariatur 
-                doloribus. Iste repellendus beatae illo, ullam sequi quibusdam quisquam obcaecati 
-                quae unde possimus commodi voluptates iure, quod fugit dolorem veniam alias illum 
-                perspiciatis laudantium consectetur totam hic ut.
+                Beyond academics, inquiry nurtures essential social and
+                emotional competencies. When children collaborate on a project,
+                share discoveries, or discuss their findings, they practice
+                communication, cooperation, and empathy. They learn that there
+                are many possible answers and that each perspective adds value.
+                <br />
+                <br />
+                Reflection is also a key part of our inquiry framework. Children
+                revisit their questions, compare results, and evaluate outcomes,
+                helping them make sense of their experiences on a deeper level.
+                This balanced approach ensures that every child learns at their
+                own pace while developing confidence, adaptability, and a
+                lifelong sense of wonder.
               </p>
             </div>
           </div>
@@ -138,9 +156,8 @@ const page = () => {
         <section className="mt-10 sm:mt-12 lg:mt-16 py-8 sm:py-10 lg:py-12 bg-[#FCECEE] -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 xl:-mx-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
           <div className="max-w-6xl mx-auto">
             <p className="text-[#D3465A] text-center font-semibold text-base sm:text-lg md:text-xl leading-relaxed">
-              Our holistic approach ensures that socio-emotional, physical, and
-              cognitive development is supported during this sensitive time of
-              growth. As a PYP school.
+              A learning approach that evolves with every question, strengthens
+              with every exploration, and grows with every child.
             </p>
           </div>
         </section>
@@ -151,7 +168,7 @@ const page = () => {
             <div className="w-full lg:w-auto shrink-0">
               <div className="relative w-full lg:w-96 xl:w-[500px] h-64 sm:h-80 md:h-96 lg:h-[400px] rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src={'/assets/blog-1.png'}
+                  src={"/assets/blog-1.png"}
                   fill
                   alt="Early Years Campus"
                   className="object-cover"
@@ -160,24 +177,25 @@ const page = () => {
             </div>
             <div className="flex-1 space-y-4 sm:space-y-6 text-gray-700 text-base sm:text-lg leading-relaxed">
               <p>
-                At the EYC, learning is driven by a balance of structured and guided inquiry, 
-                with small group teaching and direct instruction providing personalized support. 
-                Authentic experiences—exploring nature, experimenting with light, or cooking in 
-                the children's kitchen—encourage children to observe, question, and connect ideas. 
-                Play lies at the heart of learning, with neuroscience showing its vital role in 
-                strengthening brain pathways, fostering creativity, and building problem-solving 
-                and critical-thinking skills.
+                At Little Alpha, our environments are intentionally designed to
+                spark curiosity—from thoughtfully arranged learning corners to
+                interactive outdoor spaces that encourage observation and
+                discovery. Our educators provide gentle guidance, asking
+                open-ended questions and offering prompts that encourage deeper
+                thinking.
               </p>
               <p>
-                Our strong commitment to culture and values is evident through the many 
-                celebrations and traditions we engage in. These activities help us connect with 
-                our Indian heritage while at the same time provide opportunities for learning 
-                and help us appreciate other cultures, thus promoting international mindedness.
+                Children are given ample time and freedom to explore materials,
+                revisit ideas, and experiment at their own pace. Through this
+                process, they learn to take initiative, solve problems
+                creatively, and develop a sense of responsibility toward their
+                learning journey.
               </p>
               <p>
-                Our Early Years Campus is also inspired by the Reggio Emilia approach, which 
-                compliments the PYP in enabling children's creativity and their sense of wonder 
-                and awe about the world around them.
+                Inquiry-Based Learning helps children understand not just what
+                they are learning, but why it matters. This purposeful
+                exploration lays the foundation for confident, self-motivated
+                learners who are ready to embrace challenges with enthusiasm.
               </p>
             </div>
           </div>

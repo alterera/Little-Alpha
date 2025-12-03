@@ -50,13 +50,13 @@ const page = () => {
         <DynamicBreadcrumb className="py-6" />
 
         <HeroBanner
-          subtitle="Our Curriculum"
-          title="Learning journey"
+          subtitle="Our Events"
+          title="School Events"
           slides={eventSlides}
           backgroundColor="#48A7A1"
         />
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
           {eventData.map((item) => (
             <div
               key={item.id}
