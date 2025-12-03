@@ -28,6 +28,7 @@ const AboutPage = () => {
           subtitle="Discover Little Alpha"
           title="About Little Alpha"
           slides={heroSlides}
+          backgroundColor="#0C7C55"
         />
 
         {/* Content */}

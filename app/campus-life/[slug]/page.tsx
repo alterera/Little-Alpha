@@ -1,53 +1,39 @@
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
-import HeroBanner from "@/components/common/HeroBanner";
 import { Button } from "@/components/ui/button";
 import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const campusSlides = [
-  { id: 1, src: "/assets/blog-1.png", alt: "Curriculum overview" },
-  { id: 2, src: "/assets/blog-1.png", alt: "Learning activities" },
-  { id: 3, src: "/assets/blog-1.png", alt: "Student engagement" },
-];
-
 const gridData = [
-  {
-    id: 1,
-    src: "/assets/blog-1.png",
-    alt: "data",
-    title: "KYC",
-    href: "/campus-life/kyc",
-  },
-  {
-    id: 2,
-    src: "/assets/blog-1.png",
-    alt: "data",
-    title: "KYC",
-    href: "/kyc",
-  },
-  {
-    id: 3,
-    src: "/assets/blog-1.png",
-    alt: "data",
-    title: "KYC",
-    href: "/kyc",
-  },
-];
+    {
+      id: 1,
+      src: "/assets/blog-1.png",
+      alt: "data",
+      title: "KYC",
+      href: "/campus-life/kyc/kyc",
+    },
+    {
+      id: 2,
+      src: "/assets/blog-1.png",
+      alt: "data",
+      title: "KYC",
+      href: "/kyc",
+    },
+    {
+      id: 3,
+      src: "/assets/blog-1.png",
+      alt: "data",
+      title: "KYC",
+      href: "/kyc",
+    },
+  ];
 
 const page = () => {
   return (
     <div className="w-full bg-white">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-8 sm:pb-12 lg:pb-16">
         <DynamicBreadcrumb className="py-6" />
-
-        <HeroBanner
-          subtitle="Student Life"
-          title="Life at Little Alpha"
-          slides={campusSlides}
-          backgroundColor="#48A7A1"
-        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
           {gridData.map((item) => (

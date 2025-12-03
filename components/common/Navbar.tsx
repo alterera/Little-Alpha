@@ -83,10 +83,10 @@ const Navbar = () => {
             Inquire Now
           </button> */}
 
-          <Link href={"/"}>
+          <Link href={"/admissions"}>
             <Button
               effect="shine"
-              className="rounded-none rounded-tl-2xl rounded-br-2xl bg-[#0F715F] hover:text-white hover:bg-[#F75691] hover:cursor-pointer hover:shadow-xl"
+              className="rounded-none rounded-tl-2xl rounded-br-2xl bg-[#0F715F] hover:text-white hover:bg-[#F75691] hover:cursor-pointer"
             >
               Inquire Now <MoveUpRight />
             </Button>
@@ -99,7 +99,7 @@ const Navbar = () => {
         >
           <Button
             effect="shine"
-            className="rounded-none rounded-tl-2xl rounded-br-2xl bg-[#0F715F] hover:text-white hover:bg-[#F75691] hover:cursor-pointer hover:shadow-xl"
+            className="rounded-none rounded-tl-2xl rounded-br-2xl bg-[#0F715F] hover:text-white hover:bg-[#F75691] hover:cursor-pointer"
           >
             Inquire Now
           </Button>

@@ -25,19 +25,19 @@ const curriculumPathways: CurriculumPathwayItem[] = [
     id: 1,
     title: "Inquiry Based Learning",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, esse.",
-    link: "/curriculum/inquiry-based",
+    link: "/curriculum/inquiry-based-learning",
   },
   {
     id: 2,
     title: "Collaborative Spaces",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, esse.",
-    link: "/curriculum/collaborative",
+    link: "/curriculum/collaborative-spaces",
   },
   {
     id: 3,
     title: "Experiential Learning",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, esse.",
-    link: "/curriculum/experiential",
+    link: "/curriculum/experiential-learning",
   },
 ];
 
@@ -51,6 +51,7 @@ const CurriculumPage = () => {
           subtitle="Our Curriculum"
           title="Learning journey"
           slides={curriculumSlides}
+          backgroundColor="#D3465A"
         />
 
         <div className="flex flex-col md:flex-row gap-5 pt-10">
