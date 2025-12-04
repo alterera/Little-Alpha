@@ -52,8 +52,8 @@ const page = () => {
 
           {/* School Brochure Card */}
           <div className="max-w-4xl mx-auto mb-8 sm:mb-10">
-            <Link href={'/'} className="block group">
-              <div className="bg-gradient-to-r from-[#0F715F] to-[#48A7A1] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="block group">
+              <div className="bg-linear-to-r from-[#0F715F] to-[#48A7A1] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg hover:shadow-xl transition-all duration-300 transform">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
                   <div className="flex items-center gap-4 sm:gap-6">
                     <div className="bg-white/20 p-4 rounded-xl">
@@ -69,12 +69,14 @@ const page = () => {
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-white group-hover:translate-x-1 transition-transform duration-300">
-                    <Download className="w-5 h-5 sm:w-6 sm:h-6" />
-                    <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <Link href={'/The-Little-Alpha_Brochure.pdf'}>
+                      <Download className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </Link>
+                    {/* <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6" /> */}
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           </div>
 
           {/* Instructions Accordion */}

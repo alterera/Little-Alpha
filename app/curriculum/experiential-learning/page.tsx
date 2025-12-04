@@ -140,7 +140,7 @@ const page = () => {
             </div>
 
             {/* Tab Content */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-md min-h-[200px] transition-all duration-300">
+            <div className="">
               <div
                 key={activeTab}
                 className="animate-in fade-in duration-300"

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
 import Link from "next/link";
 import React from "react";
@@ -8,16 +9,81 @@ import { PortableText } from "@portabletext/react";
 import PhotoGallery from "@/components/campus-life/PhotoGallery";
 import { notFound } from "next/navigation";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string; id: string }>;
+}): Promise<Metadata> {
+  const { slug: categorySlug, id: articleSlug } = await params;
+  const article = await client.fetch(articleBySubCategoryAndIdQuery, {
+    categorySlug,
+    articleSlug,
+  });
+
+  if (!article) {
+    return {
+      title: "Campus Life Article | Little Alpha",
+    };
+  }
+
+  // Extract text from portable text for description
+  const extractText = (blocks: any[]): string => {
+    if (!blocks) return "";
+    return blocks
+      .map((block) => {
+        if (block._type === "block" && block.children) {
+          return block.children
+            .map((child: any) => (child.text || ""))
+            .join(" ");
+        }
+        return "";
+      })
+      .join(" ")
+      .substring(0, 160);
+  };
+
+  const description = extractText(article.article) || 
+    `Read about ${article.title} at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan.`;
+
+  return {
+    title: `${article.title} | Campus Life | Little Alpha | Best Kindergarten School Bikaner`,
+    description,
+    keywords: [
+      article.title,
+      "Campus life Bikaner",
+      "Student activities Bikaner",
+      "Best Play School Bikaner",
+      "Kindergarten activities Bikaner",
+      "Little Alpha",
+    ],
+    openGraph: {
+      title: `${article.title} | Little Alpha Campus Life`,
+      description,
+      url: `https://littlealpha.in/campus-life/${categorySlug}/${articleSlug}`,
+      siteName: "Little Alpha",
+      locale: "en_IN",
+      type: "article",
+    },
+    alternates: {
+      canonical: `https://littlealpha.in/campus-life/${categorySlug}/${articleSlug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
 const quickLinks = [
   { href: "#article", label: "Article" },
   { href: "#gallery", label: "Photo Gallery" },
 ];
 
-async function getArticle(slug: string, id: string) {
+async function getArticle(categorySlug: string, articleSlug: string) {
   try {
     const article = await client.fetch(articleBySubCategoryAndIdQuery, {
-      slug,
-      id,
+      categorySlug,
+      articleSlug,
     });
     return article;
   } catch (error) {
@@ -31,8 +97,8 @@ interface PageProps {
 }
 
 const page = async ({ params }: PageProps) => {
-  const { slug, id } = await params;
-  const article = await getArticle(slug, id);
+  const { slug: categorySlug, id: articleSlug } = await params;
+  const article = await getArticle(categorySlug, articleSlug);
 
   if (!article) {
     notFound();

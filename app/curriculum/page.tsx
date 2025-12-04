@@ -1,11 +1,66 @@
-"use client";
-
+import type { Metadata } from "next";
 import React from "react";
 import Link from "next/link";
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
 import HeroBanner from "@/components/common/HeroBanner";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "Curriculum at Little Alpha | Best Play School Bikaner | Early Childhood Education",
+  description:
+    "Discover Little Alpha's innovative curriculum - Best play school in Bikaner, Rajasthan. Our inquiry-based, experiential learning approach prepares children for success. Explore our curriculum pathways at the best kindergarten school Bikaner.",
+  keywords: [
+    "Curriculum Bikaner",
+    "Kindergarten curriculum Bikaner",
+    "Play school curriculum Bikaner",
+    "Early childhood curriculum Bikaner",
+    "Best Play School Bikaner",
+    "Inquiry based learning Bikaner",
+    "Experiential learning Bikaner",
+    "Preschool curriculum Bikaner",
+    "Little Alpha curriculum",
+    "Best kindergarten school Bikaner",
+  ],
+  openGraph: {
+    title: "Curriculum at Little Alpha | Best Play School Bikaner",
+    description:
+      "Discover Little Alpha's innovative curriculum - Best play school in Bikaner, Rajasthan. Our inquiry-based, experiential learning approach prepares children for success.",
+    url: "https://littlealpha.in/curriculum",
+    siteName: "Little Alpha",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/assets/blog-1.png",
+        width: 1200,
+        height: 630,
+        alt: "Little Alpha Curriculum - Best Play School Bikaner",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Curriculum at Little Alpha | Best Play School Bikaner",
+    description:
+      "Discover Little Alpha's innovative curriculum - Best play school in Bikaner, Rajasthan.",
+    images: ["/assets/blog-1.png"],
+  },
+  alternates: {
+    canonical: "https://littlealpha.in/curriculum",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const curriculumSlides = [
   { id: 1, src: "/assets/blog-1.png", alt: "Curriculum overview" },
@@ -41,9 +96,40 @@ const curriculumPathways: CurriculumPathwayItem[] = [
   },
 ];
 
+// Structured Data for SEO
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  name: "Little Alpha Early Childhood Curriculum",
+  description:
+    "Innovative curriculum at Little Alpha - Best play school in Bikaner, featuring inquiry-based learning, collaborative spaces, and experiential learning.",
+  provider: {
+    "@type": "EducationalOrganization",
+    name: "Little Alpha",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Bikaner",
+      addressRegion: "Rajasthan",
+      addressCountry: "IN",
+    },
+  },
+  educationalLevel: "Preschool",
+  teaches: [
+    "Early Childhood Development",
+    "Inquiry-Based Learning",
+    "Collaborative Learning",
+    "Experiential Learning",
+  ],
+};
+
 const CurriculumPage = () => {
   return (
-    <div className="w-full bg-white">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <div className="w-full bg-white">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-8 sm:pb-12 lg:pb-16">
         <DynamicBreadcrumb className="py-6" />
 
@@ -111,7 +197,8 @@ const CurriculumPage = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

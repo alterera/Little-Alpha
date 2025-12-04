@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
 import HeroBanner from "@/components/common/HeroBanner";
 import Image from "next/image";
@@ -8,6 +9,38 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
+export const metadata: Metadata = {
+  title: "Collaborative Spaces | Curriculum | Little Alpha | Best Play School Bikaner",
+  description:
+    "Discover Collaborative Spaces at Little Alpha - Best play school in Bikaner, Rajasthan. Interactive group activities help children build communication, teamwork, and social understanding at the best kindergarten school Bikaner.",
+  keywords: [
+    "Collaborative learning Bikaner",
+    "Teamwork Bikaner",
+    "Kindergarten curriculum Bikaner",
+    "Play school curriculum Bikaner",
+    "Best Play School Bikaner",
+    "Social learning Bikaner",
+    "Little Alpha curriculum",
+    "Best kindergarten school Bikaner",
+  ],
+  openGraph: {
+    title: "Collaborative Spaces | Little Alpha Curriculum",
+    description:
+      "Discover Collaborative Spaces at Little Alpha - Best play school in Bikaner, Rajasthan. Interactive group activities for building communication and teamwork.",
+    url: "https://littlealpha.in/curriculum/collaborative-spaces",
+    siteName: "Little Alpha",
+    locale: "en_IN",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://littlealpha.in/curriculum/collaborative-spaces",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 const curriculumSlides = [
   { id: 1, src: "/assets/blog-1.png", alt: "Curriculum overview" },

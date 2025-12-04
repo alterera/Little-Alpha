@@ -1,7 +1,40 @@
+import type { Metadata } from "next";
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
 import HeroBanner from "@/components/common/HeroBanner";
 import Image from "next/image";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Inquiry Based Learning | Curriculum | Little Alpha | Best Play School Bikaner",
+  description:
+    "Discover Inquiry Based Learning at Little Alpha - Best play school in Bikaner, Rajasthan. Our curriculum encourages children to explore questions, investigate ideas, and develop critical thinking through guided inquiry at the best kindergarten school Bikaner.",
+  keywords: [
+    "Inquiry based learning Bikaner",
+    "Kindergarten curriculum Bikaner",
+    "Play school curriculum Bikaner",
+    "Best Play School Bikaner",
+    "Critical thinking Bikaner",
+    "Early childhood education Bikaner",
+    "Little Alpha curriculum",
+    "Best kindergarten school Bikaner",
+  ],
+  openGraph: {
+    title: "Inquiry Based Learning | Little Alpha Curriculum",
+    description:
+      "Discover Inquiry Based Learning at Little Alpha - Best play school in Bikaner, Rajasthan. Our curriculum encourages children to explore questions and develop critical thinking.",
+    url: "https://littlealpha.in/curriculum/inquiry-based-learning",
+    siteName: "Little Alpha",
+    locale: "en_IN",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://littlealpha.in/curriculum/inquiry-based-learning",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 const curriculumSlides = [
   { id: 1, src: "/assets/blog-1.png", alt: "Curriculum overview" },

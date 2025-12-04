@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
 import HeroBanner from "@/components/common/HeroBanner";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,61 @@ import React from "react";
 import { client } from "@/lib/sanity";
 import { campusLifeCategoriesQuery } from "@/lib/sanity.queries";
 import { urlFor } from "@/lib/sanity.image";
+
+export const metadata: Metadata = {
+  title: "Campus Life at Little Alpha | Best Kindergarten School Bikaner",
+  description:
+    "Explore campus life at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan. Discover student activities, events, and vibrant school community life at our play school in Bikaner.",
+  keywords: [
+    "Campus life Bikaner",
+    "Student activities Bikaner",
+    "Kindergarten activities Bikaner",
+    "Play school activities Bikaner",
+    "Best Play School Bikaner",
+    "School events Bikaner",
+    "Little Alpha campus life",
+    "Student life Bikaner",
+    "Kindergarten school Bikaner",
+  ],
+  openGraph: {
+    title: "Campus Life at Little Alpha | Best Kindergarten School Bikaner",
+    description:
+      "Explore campus life at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan. Discover student activities and vibrant school community.",
+    url: "https://littlealpha.in/campus-life",
+    siteName: "Little Alpha",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/assets/blog-1.png",
+        width: 1200,
+        height: 630,
+        alt: "Little Alpha Campus Life - Best Kindergarten School Bikaner",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Campus Life at Little Alpha | Best Kindergarten School Bikaner",
+    description:
+      "Explore campus life at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan.",
+    images: ["/assets/blog-1.png"],
+  },
+  alternates: {
+    canonical: "https://littlealpha.in/campus-life",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const campusSlides = [
   { id: 1, src: "/assets/blog-1.png", alt: "Curriculum overview" },
@@ -25,11 +81,36 @@ async function getCategories() {
   }
 }
 
+// Structured Data for SEO
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Campus Life at Little Alpha",
+  description:
+    "Explore campus life at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan.",
+  url: "https://littlealpha.in/campus-life",
+  mainEntity: {
+    "@type": "EducationalOrganization",
+    name: "Little Alpha",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Bikaner",
+      addressRegion: "Rajasthan",
+      addressCountry: "IN",
+    },
+  },
+};
+
 const page = async () => {
   const categories = await getCategories();
 
   return (
-    <div className="w-full bg-white">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <div className="w-full bg-white">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-8 sm:pb-12 lg:pb-16">
         <DynamicBreadcrumb className="py-6" />
 
@@ -84,7 +165,8 @@ const page = async () => {
           )}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

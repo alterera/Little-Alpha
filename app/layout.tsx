@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <body
         className={`${quicksand.variable} ${marckscript.variable} antialiased w-full`}
       >

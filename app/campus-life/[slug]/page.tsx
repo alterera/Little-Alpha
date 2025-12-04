@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { MoveUpRight } from "lucide-react";
@@ -5,9 +6,52 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { client } from "@/lib/sanity";
-import { subCategoriesByCategorySlugQuery } from "@/lib/sanity.queries";
+import { subCategoriesByCategorySlugQuery, campusLifeCategoryBySlugQuery } from "@/lib/sanity.queries";
 import { urlFor } from "@/lib/sanity.image";
 import { notFound } from "next/navigation";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const category = await client.fetch(campusLifeCategoryBySlugQuery, { slug });
+
+  if (!category) {
+    return {
+      title: "Campus Life Category | Little Alpha",
+    };
+  }
+
+  return {
+    title: `${category.title} - Campus Life | Little Alpha | Best Kindergarten School Bikaner`,
+    description: `Explore ${category.title} at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan. Discover student activities and campus life at our play school in Bikaner.`,
+    keywords: [
+      `${category.title} Bikaner`,
+      "Campus life Bikaner",
+      "Student activities Bikaner",
+      "Best Play School Bikaner",
+      "Kindergarten activities Bikaner",
+      "Little Alpha campus life",
+    ],
+    openGraph: {
+      title: `${category.title} - Campus Life | Little Alpha`,
+      description: `Explore ${category.title} at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan.`,
+      url: `https://littlealpha.in/campus-life/${slug}`,
+      siteName: "Little Alpha",
+      locale: "en_IN",
+      type: "website",
+    },
+    alternates: {
+      canonical: `https://littlealpha.in/campus-life/${slug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
 async function getSubCategories(slug: string) {
   try {
@@ -62,15 +106,24 @@ const page = async ({ params }: PageProps) => {
                 <h2 className="text-xl sm:text-2xl font-bold text-gray-900 group-hover:text-[#0F715F] transition-colors duration-300">
                   {item.title}
                 </h2>
-                <Link
-                  href={`/campus-life/${slug}/${item.slug.current}`}
-                  className="w-fit"
-                >
-                  <Button className="group bg-transparent border-[0.5px] border-black text-[#1d1d1d] hover:bg-transparent cursor-pointer">
-                    View
-                    <MoveUpRight className="transition-transform duration-200 group-hover:translate-x-0.5" />
+                {item.firstArticle?.slug ? (
+                  <Link
+                    href={`/campus-life/${slug}/${item.firstArticle.slug.current}`}
+                    className="w-fit"
+                  >
+                    <Button className="group bg-transparent border-[0.5px] border-black text-[#1d1d1d] hover:bg-transparent cursor-pointer">
+                      View
+                      <MoveUpRight className="transition-transform duration-200 group-hover:translate-x-0.5" />
+                    </Button>
+                  </Link>
+                ) : (
+                  <Button 
+                    disabled
+                    className="w-fit bg-transparent border-[0.5px] border-gray-400 text-gray-400 cursor-not-allowed"
+                  >
+                    No Article
                   </Button>
-                </Link>
+                )}
               </div>
             </div>
           ))}
