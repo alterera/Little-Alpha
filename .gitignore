@@ -23,7 +23,7 @@
 # misc
 .DS_Store
 *.pem
-/sanity
+# /sanity
 
 # debug
 npm-debug.log*
