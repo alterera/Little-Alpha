@@ -18,7 +18,7 @@ const USEFUL_LINKS = [
   { label: "Life at Little Alpha", href: "/campus-life" },
   { label: "Events", href: "/events" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Our Curriculum", href: "/curriculum" },
+  { label: "Blogs", href: "/blogs" },
 ];
 
 const RESOURCES = [

@@ -53,7 +53,7 @@ const BlogsPage = async () => {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-16">
         <DynamicBreadcrumb className="py-8" />
 
-        <div className="flex flex-col gap-4 mb-8">
+        <div className="flex flex-col gap-4 mb-8 items-center">
           <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
             Our Stories
           </p>

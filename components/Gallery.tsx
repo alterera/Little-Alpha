@@ -8,10 +8,10 @@ import { Instagram } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 const galleryImages = [
-  { id: 1, src: "/assets/blog-1.png", alt: "Creative moments", rotation: 12 },
-  { id: 2, src: "/assets/blog-1.png", alt: "Fun activities", rotation: -10 },
-  { id: 3, src: "/assets/blog-1.png", alt: "Joyful learning", rotation: 15 },
-  { id: 4, src: "/assets/blog-1.png", alt: "Play time", rotation: -6 },
+  { id: 1, src: "/assets/gallery/g1.webp", alt: "Creative moments", rotation: 12 },
+  { id: 2, src: "/assets/gallery/g2.webp", alt: "Fun activities", rotation: -10 },
+  { id: 3, src: "/assets/gallery/g3.webp", alt: "Joyful learning", rotation: 15 },
+  { id: 4, src: "/assets/gallery/g4.webp", alt: "Play time", rotation: -6 },
 ];
 
 const MobileGalleryCarousel = () => {

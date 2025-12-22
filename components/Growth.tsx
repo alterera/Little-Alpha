@@ -7,17 +7,17 @@ import { motion } from "framer-motion";
 
 const CounterData = [
   {
-    count: 100,
+    count: 48,
     color: "E4282E",
     title: "Years of Experience",
   },
   {
-    count: 53,
+    count: 23,
     color: "0C7C55",
     title: "Awards Won",
   },
   {
-    count: 500,
+    count: 999,
     color: "D63E75",
     title: "Students Enrolled",
   },

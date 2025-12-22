@@ -95,9 +95,11 @@ const Blogs = () => {
                 height={20}
                 alt="bubble"
               />
-              <button className="py-2 sm:py-5 hover:underline">
-                View all
-              </button>
+              <Link href={'/blogs'}>
+                <button className="py-2 sm:py-5 hover:underline cursor-pointer">
+                  View all
+                </button>
+              </Link>
             </div>
           </div>
         </motion.div>

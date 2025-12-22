@@ -11,13 +11,13 @@ const Topbar = () => {
           {/* Links Section */}
           <div className="flex items-center gap-4 sm:gap-6 text-sm sm:text-base">
             <Link
-              href={"#"}
+              href={"https://stvivekanandschool.com/"}
               className="hover:text-[#F4D548] transition-colors duration-200 font-medium"
             >
               SVS
             </Link>
             <Link
-              href={"#"}
+              href={"https://littlealpha.in/"}
               className="hover:text-[#F4D548] transition-colors duration-200 font-semibold relative after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-0.5 after:bg-[#F4D548]"
             >
               Little Alpha

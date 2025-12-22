@@ -38,6 +38,33 @@ export const blogPostBySlugQuery = groq`
   }
 `
 
+// ========== GALLERY QUERIES ==========
+
+export const galleryCategoriesQuery = groq`
+  *[_type == "galleryCategory"] | order(title asc) {
+    _id,
+    title,
+    slug
+  }
+`
+
+export const galleryImagesQuery = groq`
+  *[_type == "galleryImage" && (
+    !defined($categorySlug) || $categorySlug == "" || category->slug.current == $categorySlug
+  )] | order(_createdAt desc)[$start...$end] {
+    _id,
+    "image": image,
+    "imageAlt": image.alt,
+    category->{title, slug}
+  }
+`
+
+export const galleryImagesCountQuery = groq`
+  count(*[_type == "galleryImage" && (
+    !defined($categorySlug) || $categorySlug == "" || category->slug.current == $categorySlug
+  )])
+`
+
 // Query to get all campus life categories
 export const campusLifeCategoriesQuery = groq`
   *[_type == "campusLifeCategory"] | order(title asc) {
