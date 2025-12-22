@@ -15,6 +15,7 @@ type CurriculumItem = {
   titleHighlight: string;
   description: string;
   link: string;
+  image: string;
   bgColor: string;
   textBgColor: string;
   textColor: string;
@@ -28,6 +29,7 @@ const curriculumData: CurriculumItem[] = [
     titleHighlight: "Learning",
     description: "Lorem ipsum dolor sit amet.",
     link: "/curriculum/inquiry-based-learning",
+    image: "/assets/curriculum/inquiry.jpg",
     bgColor: "#DFC8FD",
     textBgColor: "#DFC8FD",
     textColor: "text-black",
@@ -39,6 +41,7 @@ const curriculumData: CurriculumItem[] = [
     titleHighlight: "Spaces",
     description: "Lorem ipsum dolor sit amet.",
     link: "/curriculum/collaborative-spaces",
+    image: "/assets/curriculum/collab.jpg",
     bgColor: "#704FE7",
     textBgColor: "#704FE7",
     textColor: "text-white",
@@ -50,6 +53,7 @@ const curriculumData: CurriculumItem[] = [
     titleHighlight: "Learning",
     description: "Lorem ipsum dolor sit amet.",
     link: "/curriculum/experiential-learning",
+    image: "/assets/curriculum/experiential.webp",
     bgColor: "#FFD463",
     textBgColor: "#FFD463",
     textColor: "text-black",
@@ -163,13 +167,13 @@ const Curriculum = () => {
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: true }}
-                      className="relative aspect-[9/10] sm:aspect-[2/3] md:aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden group cursor-pointer"
+                      className="relative aspect-9/10 sm:aspect-2/3 md:aspect-3/4 rounded-2xl sm:rounded-3xl overflow-hidden group cursor-pointer"
                       style={{ backgroundColor: item.bgColor }}
                     >
                       {/* Background Image */}
                       <div className="absolute inset-0 overflow-hidden">
                         <Image
-                          src="/assets/blog-1.png"
+                          src={item.image}
                           fill
                           alt={item.title}
                           className="object-cover transition-transform duration-700 delay-150 ease-out group-hover:scale-110"
@@ -230,7 +234,7 @@ const Curriculum = () => {
                 {/* Background Image */}
                 <div className="absolute inset-0 overflow-hidden">
                   <Image
-                    src="/assets/blog-1.png"
+                    src={item.image}
                     fill
                     alt={item.title}
                     className="object-cover transition-transform duration-700 delay-150 ease-out group-hover:scale-110"

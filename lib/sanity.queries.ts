@@ -1,5 +1,43 @@
 import { groq } from 'next-sanity'
 
+// ========== BLOG QUERIES ==========
+
+export const blogPostsQuery = groq`
+  *[_type == "blogPost"] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    excerpt,
+    publishedAt,
+    featuredImage,
+    content
+  }
+`
+
+export const latestBlogPostsQuery = groq`
+  *[_type == "blogPost"] | order(publishedAt desc) [0...5] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    publishedAt,
+    featuredImage,
+    content
+  }
+`
+
+export const blogPostBySlugQuery = groq`
+  *[_type == "blogPost" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    excerpt,
+    publishedAt,
+    featuredImage,
+    content
+  }
+`
+
 // Query to get all campus life categories
 export const campusLifeCategoriesQuery = groq`
   *[_type == "campusLifeCategory"] | order(title asc) {

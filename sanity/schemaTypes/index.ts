@@ -4,6 +4,7 @@ import campusLifeArticle from './campusLifeArticle'
 import eventCategory from './eventCategory'
 import eventSubCategory from './eventSubCategory'
 import eventArticle from './eventArticle'
+import blogPost from './blogPost'
 
 export const schemaTypes = [
   campusLifeCategory,
@@ -12,4 +13,5 @@ export const schemaTypes = [
   eventCategory,
   eventSubCategory,
   eventArticle,
+  blogPost,
 ]

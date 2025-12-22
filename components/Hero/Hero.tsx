@@ -15,7 +15,7 @@ type SlideContent = {
 const SLIDES = [
   {
     id: 1,
-    image: '/assets/hero/hero-1.png',
+    image: '/assets/hero/h1.webp',
     content: {
       words: [
         { text: 'Inspire', color: '#FFD700' }, // yellow
@@ -28,7 +28,7 @@ const SLIDES = [
   },
   {
     id: 2,
-    image: '/assets/hero/hero-2.png',
+    image: '/assets/hero/h2.webp',
     content: {
       words: [
         { text: 'Learn', color: '#4A90E2' }, // blue
@@ -41,7 +41,7 @@ const SLIDES = [
   },
   {
     id: 3,
-    image: '/assets/hero/hero-1.png',
+    image: '/assets/hero/h3.webp',
     content: {
       words: [
         { text: 'Explore', color: '#FFA500' }, // orange

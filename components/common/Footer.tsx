@@ -13,32 +13,32 @@ const QUICK_LINKS = [
 ];
 
 const USEFUL_LINKS = [
-  { label: "About Us", href: "#" },
-  { label: "Admission Procedure", href: "#" },
-  { label: "Life at Little Alpha", href: "#" },
-  { label: "Events", href: "#" },
-  { label: "Gallery", href: "#" },
-  { label: "Our Curriculum", href: "#" },
+  { label: "About Us", href: "/about" },
+  { label: "Admission Procedure", href: "/admissions" },
+  { label: "Life at Little Alpha", href: "/campus-life" },
+  { label: "Events", href: "/events" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Our Curriculum", href: "/curriculum" },
 ];
 
 const RESOURCES = [
-  { label: "Careers", href: "#" },
+  { label: "Careers", href: "/careers" },
   { label: "Parent Login", href: "#" },
-  { label: "Terms of Use", href: "#" },
-  { label: "Privacy Policy", href: "#" },
+  { label: "Terms of Use", href: "/terms-of-use" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
 const CONTACT_INFO = {
-  address: "Little Alpha Play School, GNB Rd, 32/B Orion Towers, Bikaner Rajasthan - 124672 IN",
-  email: { label: "info@littlealpha.in", href: "#" },
-  phone: { label: "+91 4278 8922 90", href: "#" },
+  address: "Statue Circle, JNV Main Rd, Sector 3, Jai Narayan Vyas Colony, Bikaner, Rajasthan - 334001 IN",
+  email: { label: "st.vivekanand@yahoo.com", href: "mailto:st.vivekanand@yahoo.com" },
+  phone: { label: "+91 957 166 5859", href: "tel:919571665859" },
 };
 
 const SOCIAL_LINKS = [
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: Instagram, href: "https://instagram.com/", label: "Instagram" },
+  { icon: Facebook, href: "https://facebook.com/", label: "Facebook" },
+  { icon: Linkedin, href: "https://linkedin.com/", label: "LinkedIn" },
+  { icon: Youtube, href: "https://youtube.com/", label: "YouTube" },
 ];
 
 const COPYRIGHT = {

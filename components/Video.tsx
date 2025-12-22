@@ -49,7 +49,7 @@ const Video = () => {
             ref={videoRef}
             className="w-full h-full object-cover aspect-video"
             controls
-            poster="/assets/bg/video-poster.png"
+            poster="/assets/hero/h3.webp"
           >
             <source
               src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"

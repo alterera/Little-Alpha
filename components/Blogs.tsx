@@ -1,62 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import React, { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { EmblaCarouselType } from "embla-carousel";
 import { usePrevNextButtons } from "./Hero/ArrowButtons";
 import { motion } from "framer-motion";
+import { Skeleton } from "./ui/skeleton";
+import { urlFor } from "@/lib/sanity.image";
 
 type BlogPost = {
-  id: number;
+  _id: string;
   title: string;
-  description: string;
-  image: string;
-  backgroundColor: string;
+  slug: { current: string };
+  excerpt?: string;
+  featuredImage?: any;
 };
 
-const BLOG_POSTS: BlogPost[] = [
-  {
-    id: 1,
-    title: "8 Ways to keep your child keep learning with fun",
-    description:
-      "Lorem ipsum caterer spaces and cafè. Ipsum productive and make friends...",
-    image: "/assets/blog-1.png",
-    backgroundColor: "#E15E89",
-  },
-  {
-    id: 2,
-    title: "Building Confidence Through Creative Learning",
-    description:
-      "Discover how creative activities can boost your child's confidence and learning abilities...",
-    image: "/assets/blog-1.png",
-    backgroundColor: "#4A90E2",
-  },
-  {
-    id: 3,
-    title: "The Importance of Early Childhood Education",
-    description:
-      "Learn why early education plays a crucial role in your child's development and future success...",
-    image: "/assets/blog-1.png",
-    backgroundColor: "#50C878",
-  },
-  {
-    id: 4,
-    title: "Fun Math Activities for Young Learners",
-    description:
-      "Explore engaging ways to make mathematics enjoyable and accessible for children...",
-    image: "/assets/blog-1.png",
-    backgroundColor: "#FF6B6B",
-  },
-  {
-    id: 5,
-    title: "Developing Social Skills Through Play",
-    description:
-      "Understand how play-based learning helps children develop essential social skills...",
-    image: "/assets/blog-1.png",
-    backgroundColor: "#9B59B6",
-  },
-];
+const COLOR_POOL = ["#E15E89", "#4A90E2", "#50C878", "#FF6B6B", "#9B59B6"];
+
+function truncate(text: string | undefined, words = 18) {
+  if (!text) return "";
+  const parts = text.split(/\s+/);
+  if (parts.length <= words) return text;
+  return `${parts.slice(0, words).join(" ")}...`;
+}
 
 const Blogs = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -71,6 +39,28 @@ const Blogs = () => {
     onPrevButtonClick,
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
+
+  const [blogs, setBlogs] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let isMounted = true;
+    fetch("/api/blogs/latest")
+      .then((res) => res.json())
+      .then((data) => {
+        if (isMounted) setBlogs(data || []);
+      })
+      .catch(() => {
+        if (isMounted) setBlogs([]);
+      })
+      .finally(() => {
+        if (isMounted) setLoading(false);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <div className="w-full bg-[#0F715F] relative">
@@ -115,51 +105,86 @@ const Blogs = () => {
         <div className="relative -mx-4 sm:-mx-6 lg:-mx-8">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
-              {BLOG_POSTS.map((post) => (
-                <motion.div
-                  key={post.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="shrink-0 w-full sm:w-[85%] md:w-[70%] lg:w-[45%] xl:w-[40%] px-4 sm:px-6 lg:px-8"
-                >
-                  <div
-                    className="flex flex-col sm:flex-row h-auto sm:h-[300px] lg:h-[350px]"
-                    style={{ backgroundColor: post.backgroundColor }}
-                  >
-                    <div className="relative w-full sm:w-1/2 h-48 sm:h-full">
-              <Image
-                        src={post.image}
-                fill
-                        className="object-cover"
-                        alt={post.title}
-              />
-            </div>
-                    <div className="w-full sm:w-1/2 p-4 sm:p-6 text-white flex flex-col gap-3 sm:gap-4 justify-between">
-                      <div className="flex flex-col gap-2 sm:gap-3">
-                        <h4 className="text-xl sm:text-2xl lg:text-3xl font-semibold">
-                          {post.title}
-              </h4>
-                        <p className="text-sm sm:text-base line-clamp-3">
-                          {post.description}
-              </p>
+              {loading
+                ? Array.from({ length: 3 }).map((_, idx) => (
+                    <div
+                      key={idx}
+                      className="shrink-0 w-full sm:w-[85%] md:w-[70%] lg:w-[45%] xl:w-[40%] px-4 sm:px-6 lg:px-8"
+                    >
+                      <div className="flex flex-col sm:flex-row h-auto sm:h-[300px] lg:h-[350px] bg-white/10 rounded-2xl overflow-hidden backdrop-blur">
+                        <div className="relative w-full sm:w-1/2 h-48 sm:h-full">
+                          <Skeleton className="h-full w-full rounded-none" />
+                        </div>
+                        <div className="w-full sm:w-1/2 p-4 sm:p-6 text-white flex flex-col gap-3 sm:gap-4 justify-between">
+                          <div className="flex flex-col gap-3">
+                            <Skeleton className="h-6 w-3/4 bg-white/20" />
+                            <Skeleton className="h-4 w-full bg-white/20" />
+                            <Skeleton className="h-4 w-5/6 bg-white/20" />
+                          </div>
+                          <Skeleton className="h-8 w-24 bg-white/20" />
+                        </div>
                       </div>
-              <div className="flex gap-2 items-center">
-                <Image
-                  src={"/assets/shapes/triangle.svg"}
-                  height={20}
-                  width={20}
-                  alt="triangle"
-                />
-                        <button className="text-sm sm:text-base hover:underline">
-                          Read More
-                        </button>
-              </div>
-            </div>
-          </div>
-                </motion.div>
-              ))}
+                    </div>
+                  ))
+                : blogs.map((post, index) => (
+                    <motion.div
+                      key={post._id}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5 }}
+                      className="shrink-0 w-full sm:w-[85%] md:w-[70%] lg:w-[45%] xl:w-[40%] px-4 sm:px-6 lg:px-8"
+                    >
+                      <div
+                        className="flex flex-col sm:flex-row h-auto sm:h-[300px] lg:h-[350px] overflow-hidden"
+                        style={{
+                          backgroundColor: COLOR_POOL[index % COLOR_POOL.length],
+                        }}
+                      >
+                        <div className="relative w-full sm:w-1/2 h-48 sm:h-full">
+                          {post.featuredImage ? (
+                            <Image
+                              src={urlFor(post.featuredImage)
+                                .width(600)
+                                .height(600)
+                                .url()}
+                              fill
+                              className="object-cover"
+                              alt={post.title}
+                              unoptimized
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-white/10" />
+                          )}
+                        </div>
+                        <div className="w-full sm:w-1/2 p-4 sm:p-6 text-white flex flex-col gap-3 sm:gap-4 justify-between">
+                          <div className="flex flex-col gap-2 sm:gap-3">
+                            <h4 className="text-xl sm:text-2xl lg:text-3xl font-semibold">
+                              {post.title}
+                            </h4>
+                            <p className="text-sm sm:text-base line-clamp-3">
+                              {truncate(post.excerpt, 18)}
+                            </p>
+                          </div>
+                          <div className="flex gap-2 items-center">
+                            <Image
+                              src={"/assets/shapes/triangle.svg"}
+                              height={20}
+                              width={20}
+                              alt="triangle"
+                            />
+                            <Link
+                              href={`/blogs/${post.slug?.current}`}
+                              className="text-sm sm:text-base hover:underline"
+                            >
+                              Read More
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
             </div>
           </div>
 

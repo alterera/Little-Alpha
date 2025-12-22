@@ -93,7 +93,7 @@ const Welcome = () => {
         {/* Image - Full width from middle to right */}
         <div className='relative w-full lg:w-1/2 h-64 sm:h-80 md:h-96 lg:h-auto lg:min-h-[500px] xl:min-h-[600px]'>
           <Image 
-            src={'/assets/campus/welcome.png'} 
+            src={'/assets/campus/welcome.webp'} 
             fill 
             alt='little alpha play school welcome' 
             className='object-cover' 
