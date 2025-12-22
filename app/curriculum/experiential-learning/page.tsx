@@ -6,9 +6,9 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 const curriculumSlides = [
-  { id: 1, src: "/assets/blog-1.png", alt: "Curriculum overview" },
-  { id: 2, src: "/assets/blog-1.png", alt: "Learning activities" },
-  { id: 3, src: "/assets/blog-1.png", alt: "Student engagement" },
+  { id: 1, src: "/assets/hero/h1.webp", alt: "Curriculum overview" },
+  { id: 2, src: "/assets/hero-slide/about/a1.webp", alt: "Student engagement" },
+  { id: 3, src: "/assets/hero-slide/in1.webp", alt: "Learning activities" },
 ];
 
 const tabContent = [
@@ -50,10 +50,10 @@ const page = () => {
               At Little Alpha, we believe children learn best when they actively engage with the world around them. Experiential Learning allows them to discover concepts through hands-on activities, meaningful interactions, and real-life scenarios. Whether they are exploring nature, experimenting with materials, or participating in themed learning environments, children develop a deeper understanding of how things work. Through these moments of doing, touching, observing, and creating, learning becomes not just a lesson—but an experience they truly connect with.
               </p>
             </div>
-            <div className="w-full lg:w-auto shrink-0">
-              <div className="relative w-full sm:w-64 md:w-72 lg:w-80 xl:w-96 h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 rounded-xl overflow-hidden shadow-lg">
+            <div className="flex-1 w-full lg:w-auto shrink-0">
+              <div className="relative w-150 h-100 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src={"/assets/blog-1.png"}
+                  src={"/assets/hero-slide/about/a1.webp"}
                   fill
                   alt="Curriculum image"
                   className="object-cover"
@@ -64,10 +64,10 @@ const page = () => {
         </section>
         <section className="mt-10 sm:mt-12 lg:mt-16">
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 xl:gap-10 items-center lg:items-start">
-            <div className="w-full lg:w-auto shrink-0">
-              <div className="relative w-full sm:w-64 md:w-72 lg:w-80 xl:w-96 h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 rounded-xl overflow-hidden shadow-lg">
+            <div className="w-full flex-1 lg:w-auto shrink-0">
+              <div className="relative w-150 h-100 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src={"/assets/blog-1.png"}
+                  src={"/assets/hero-slide/about/a2.webp"}
                   fill
                   alt="Curriculum image"
                   className="object-cover"
@@ -104,7 +104,7 @@ const page = () => {
           <div className="flex-1 w-full lg:w-auto shrink-0">
               <div className="relative w-full sm:w-64 md:w-72 lg:w-150 h-48 sm:h-64 md:h-72 lg:h-80 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src={"/assets/blog-1.png"}
+                  src={"/assets/hero-slide/about/a3.webp"}
                   fill
                   alt="Curriculum image"
                   className="object-cover"

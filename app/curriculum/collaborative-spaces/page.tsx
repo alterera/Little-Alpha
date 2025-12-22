@@ -67,9 +67,9 @@ export const metadata: Metadata = {
 };
 
 const curriculumSlides = [
-  { id: 1, src: "/assets/blog-1.png", alt: "Curriculum overview" },
-  { id: 2, src: "/assets/blog-1.png", alt: "Learning activities" },
-  { id: 3, src: "/assets/blog-1.png", alt: "Student engagement" },
+  { id: 1, src: "/assets/hero-slide/about/a2.webp", alt: "Curriculum overview" },
+  { id: 2, src: "/assets/hero-slide/about/a3.webp", alt: "Learning activities" },
+  { id: 3, src: "/assets/curriculum/c.webp", alt: "Student engagement" },
 ];
 
 const page = () => {
@@ -89,9 +89,9 @@ const page = () => {
         <section className="mt-10 sm:mt-12 lg:mt-16">
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 xl:gap-10 items-center lg:items-start">
             <div className="flex-1 w-full lg:w-auto shrink-0">
-              <div className="relative w-full sm:w-64 md:w-72 lg:w-150 h-48 sm:h-64 md:h-72 lg:h-80 rounded-xl overflow-hidden shadow-lg">
+              <div className="relative w-full sm:w-64 md:w-72 lg:w-150 h-150 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src={"/assets/blog-1.png"}
+                  src={"/assets/curriculum/c.webp"}
                   fill
                   alt="Curriculum image"
                   className="object-cover"
@@ -120,9 +120,9 @@ const page = () => {
         <section className="mt-10 sm:mt-12 lg:mt-16 py-8 sm:py-10 lg:py-12 bg-[#EEF7FF] -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 xl:-mx-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
           <div className="flex flex-col lg:flex-row-reverse gap-6 lg:gap-8 xl:gap-10 items-center lg:items-start">
             <div className="w-full flex-1 lg:w-auto shrink-0">
-              <div className="relative w-full sm:w-64 md:w-72 lg:w-180 h-48 sm:h-64 md:h-72 lg:h-80 rounded-xl overflow-hidden shadow-lg">
+              <div className="relative w-full sm:w-64 md:w-72 lg:w-180 h-150 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src={"/assets/blog-1.png"}
+                  src={"/assets/curriculum/c2.webp"}
                   fill
                   alt="Learning approach"
                   className="object-cover"
@@ -177,9 +177,9 @@ const page = () => {
         <section className="mt-10 sm:mt-12 lg:mt-16 py-8 sm:py-10 lg:py-12 -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 xl:-mx-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
           <div className="flex flex-col lg:flex-row-reverse gap-6 lg:gap-8 xl:gap-10 items-center lg:items-start">
             <div className="w-full flex-1 lg:w-auto shrink-0">
-              <div className="relative w-full sm:w-64 md:w-72 lg:w-180 h-48 sm:h-64 md:h-72 lg:h-80 rounded-xl overflow-hidden shadow-lg">
+              <div className="relative w-full sm:w-64 md:w-72 lg:w-180 h-150 rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src={"/assets/blog-1.png"}
+                  src={"/assets/curriculum/c3.webp"}
                   fill
                   alt="Learning approach"
                   className="object-cover"

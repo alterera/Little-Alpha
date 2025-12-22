@@ -103,11 +103,7 @@ const Growth = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 max-w-6xl mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-20"
         >
-          The story, which begins 5 years back with one preschool, resulted in a
-          well-established leading preschool brand and writing a new chapter in
-          its success story every day. Lorem ipsum, dolor sit amet consectetur
-          adipisicing elit. Dicta eligendi deleniti quo esse culpa recusandae
-          commodi sapiente tempore error asperiores?
+          Our educational journey began in 1977 with SVS, a trusted CBSE high school dedicated to academic excellence. Building on this strong legacy, we take a new step in 2025 with the launch of Little Alpha Play School, bringing quality, value-based education to children from their very first learning experience.
         </motion.p>
 
         <motion.div

@@ -84,8 +84,7 @@ const Blogs = () => {
 
           <div className="flex flex-col gap-4">
             <p className="text-sm sm:text-base max-w-md">
-              Lorem ipsum caterer spaces and cafè. Ipsim productive; make
-              friends, and beome part of the tribe.
+            Discover parenting tips, early learning insights, and updates from Little Alpha to support your child's growth.
             </p>
 
             <div className="flex items-center gap-2">

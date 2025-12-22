@@ -65,9 +65,9 @@ export const metadata: Metadata = {
 };
 
 const curriculumSlides = [
-  { id: 1, src: "/assets/blog-1.png", alt: "Curriculum overview" },
-  { id: 2, src: "/assets/blog-1.png", alt: "Learning activities" },
-  { id: 3, src: "/assets/blog-1.png", alt: "Student engagement" },
+  { id: 1, src: "/assets/hero/h1.webp", alt: "Curriculum overview" },
+  { id: 2, src: "/assets/hero-slide/curriculum/c3.webp", alt: "Learning activities" },
+  { id: 3, src: "/assets/hero-slide/curriculum/c2.webp", alt: "Student engagement" },
 ];
 
 type CurriculumPathwayItem = {
@@ -158,7 +158,7 @@ const CurriculumPage = () => {
           </div>
           <div className="flex-1 relative">
             <Image
-              src={"/assets/blog-1.png"}
+              src={"/assets/hero/h1.webp"}
               fill
               alt="side pic"
               className="object-cover rounded-2xl"
@@ -179,10 +179,9 @@ const CurriculumPage = () => {
 
           <div className="flex flex-col md:flex-row justify-between gap-4 pt-5">
             {curriculumPathways.map((pathway) => (
-              <Link
+              <div
                 key={pathway.id}
-                href={pathway.link}
-                className="flex flex-col gap-4 justify-between bg-white p-10 items-center rounded-3xl relative overflow-hidden"
+                className="flex flex-col gap-4 justify-between bg-white p-15 items-center rounded-3xl relative overflow-hidden"
               >
                 <Image
                   src="/assets/bg/bg-logo.png"
@@ -193,8 +192,10 @@ const CurriculumPage = () => {
                 />
                 <h2 className="text-2xl font-bold relative z-10 text-center">{pathway.title}</h2>
                 <p className="text-center relative z-10">{pathway.description}</p>
-                <Button variant='outline' className="relative z-10 bg-transparent">Learn More</Button>
-              </Link>
+                <Link href={pathway.link}>
+                  <Button variant='outline' className="relative z-10 bg-transparent cursor-pointer hover:bg-white">Learn More</Button>
+                </Link>
+              </div>
             ))}
           </div>
         </div>

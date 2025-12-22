@@ -27,7 +27,7 @@ const curriculumData: CurriculumItem[] = [
     id: 1,
     title: "Inquiry Based",
     titleHighlight: "Learning",
-    description: "Lorem ipsum dolor sit amet.",
+    description: "Encouraging children to ask questions, explore ideas, and learn through curiosity.",
     link: "/curriculum/inquiry-based-learning",
     image: "/assets/curriculum/inquiry.jpg",
     bgColor: "#DFC8FD",
@@ -39,7 +39,7 @@ const curriculumData: CurriculumItem[] = [
     id: 2,
     title: "Collaborative",
     titleHighlight: "Spaces",
-    description: "Lorem ipsum dolor sit amet.",
+    description: "Promoting teamwork, communication, and social skills through shared learning spaces.",
     link: "/curriculum/collaborative-spaces",
     image: "/assets/curriculum/collab.jpg",
     bgColor: "#704FE7",
@@ -49,16 +49,16 @@ const curriculumData: CurriculumItem[] = [
   },
   {
     id: 3,
-    title: "Experential",
+    title: "Experiential",
     titleHighlight: "Learning",
-    description: "Lorem ipsum dolor sit amet.",
+    description: "Hands-on activities that help children learn by doing, experiencing, and reflecting.",
     link: "/curriculum/experiential-learning",
     image: "/assets/curriculum/experiential.webp",
     bgColor: "#FFD463",
     textBgColor: "#FFD463",
     textColor: "text-black",
     highlightColor: "text-[#0F715F]",
-  },
+  },  
 ];
 
 // Helper function to convert hex to rgba with opacity

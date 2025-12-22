@@ -80,11 +80,10 @@ const Gallery = () => {
         {/* Header Section */}
         <div className="flex flex-col items-center gap-4 sm:gap-5 mb-12 sm:mb-16 md:mb-20">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center">
-            Little Alpha <span className="text-[#0F715F]">Gallery</span>
+            Little Alpha <span className="text-[#f54900]">Gallery</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-700 text-center max-w-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
-            veritatis!
+          A glimpse into joyful learning moments, playful activities, and happy smiles at Little Alpha.
           </p>
           <Link href={"/gallery"}>
             <Button

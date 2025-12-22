@@ -62,9 +62,9 @@ export const metadata: Metadata = {
 };
 
 const heroSlides = [
-  { id: 1, src: "/assets/blog-1.png", alt: "Students exploring nature" },
-  { id: 2, src: "/assets/blog-1.png", alt: "Creative classroom moments" },
-  { id: 3, src: "/assets/blog-1.png", alt: "Joyful play sessions" },
+  { id: 1, src: "/assets/hero-slide/about/a3.webp", alt: "Students exploring nature" },
+  { id: 2, src: "/assets/hero-slide/about/a2.webp", alt: "Creative classroom moments" },
+  { id: 3, src: "/assets/hero-slide/about/a1.webp", alt: "Joyful play sessions" },
 ];
 
 const quickLinks = [
@@ -158,15 +158,14 @@ const AboutPage = () => {
               </p>
               <figure className="rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src={"/assets/blog-1.png"}
-                  height={480}
+                  src={"/assets/person/nipun-gupta.webp"}
+                  height={780}
                   width={720}
                   alt="Founder message"
-                  className="w-full h-[240px] sm:h-[320px] object-cover"
+                  className="w-full object-cover"
                 />
                 <figcaption className="p-4 text-sm text-[#0F715F] font-semibold">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Asperiores quas, temporibus laboriosam hic magni ratione iste.
+                  Mr. Nipun Gupta - Director & Founder
                 </figcaption>
               </figure>
             </section>
@@ -192,8 +191,8 @@ const AboutPage = () => {
             </section>
           </article>
 
-          <aside className="lg:w-80">
-            <div className="bg-[#F2FBF5] border border-[#BCE7CF] rounded-3xl p-6 shadow-md">
+          <aside className="lg:w-80 lg:self-start">
+            <div className="md:sticky md:top-24 bg-[#F2FBF5] border border-[#BCE7CF] rounded-3xl p-6 shadow-md">
               <h4 className="text-xl font-semibold text-[#0F715F] mb-6">
                 Quick Navigation
               </h4>

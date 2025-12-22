@@ -62,7 +62,7 @@ export const metadata: Metadata = {
       "Little Alpha is the best play school and kindergarten in Bikaner, Rajasthan. Offering quality early childhood education and innovative curriculum.",
     images: [
       {
-        url: "/og.png",
+        url: "https://littlealpha.in/og.png",
         width: 1200,
         height: 630,
         alt: "Little Alpha - Best Play School in Bikaner",

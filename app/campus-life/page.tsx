@@ -69,9 +69,9 @@ export const metadata: Metadata = {
 };
 
 const campusSlides = [
-  { id: 1, src: "/assets/blog-1.png", alt: "Curriculum overview" },
-  { id: 2, src: "/assets/blog-1.png", alt: "Learning activities" },
-  { id: 3, src: "/assets/blog-1.png", alt: "Student engagement" },
+  { id: 1, src: "/assets/hero/h1.webp", alt: "Curriculum overview" },
+  { id: 2, src: "/assets/hero/h2.webp", alt: "Learning activities" },
+  { id: 3, src: "/assets/hero/h3.webp", alt: "Student engagement" },
 ];
 
 async function getCategories() {

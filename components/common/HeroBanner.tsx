@@ -69,7 +69,7 @@ const HeroBanner = ({
           height={400}
           className="absolute top-1/2 left-15 -translate-x-1/2 -translate-y-1/2 opacity-10 pointer-events-none z-0 rotate-90"
         />
-        <div className="relative z-10 flex flex-col justify-between h-full">
+        <div className="relative z-10 flex flex-col justify-between h-full min-h-[150px] md:min-h-[250px]">
           {subtitle && (
             <p className="hidden md:block uppercase text-sm sm:text-base tracking-[0.3em] text-white/70">
               {subtitle}
