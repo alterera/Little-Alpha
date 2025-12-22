@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   description:
     "Discover Little Alpha's innovative curriculum - Best play school in Bikaner, Rajasthan. Our inquiry-based, experiential learning approach prepares children for success. Explore our curriculum pathways at the best kindergarten school Bikaner.",
   keywords: [
+    "Best play school in Bikaner",
+    "Top kindergarten school in Bikaner",
+    "Best kindergarten school Bikaner",
     "Curriculum Bikaner",
     "Kindergarten curriculum Bikaner",
     "Play school curriculum Bikaner",
@@ -20,7 +23,6 @@ export const metadata: Metadata = {
     "Experiential learning Bikaner",
     "Preschool curriculum Bikaner",
     "Little Alpha curriculum",
-    "Best kindergarten school Bikaner",
   ],
   openGraph: {
     title: "Curriculum at Little Alpha | Best Play School Bikaner",
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/blog-1.png",
+        url: "https://littlealpha.in/og.png",
         width: 1200,
         height: 630,
         alt: "Little Alpha Curriculum - Best Play School Bikaner",
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
     title: "Curriculum at Little Alpha | Best Play School Bikaner",
     description:
       "Discover Little Alpha's innovative curriculum - Best play school in Bikaner, Rajasthan.",
-    images: ["/assets/blog-1.png"],
+    images: ["https://littlealpha.in/og.png"],
   },
   alternates: {
     canonical: "https://littlealpha.in/curriculum",
@@ -79,19 +81,19 @@ const curriculumPathways: CurriculumPathwayItem[] = [
   {
     id: 1,
     title: "Inquiry Based Learning",
-    description: "Children explore questions, investigate ideas, and develop critical thinking through guided inquiry.",
+    description: "Develop critical thinking through guided inquiry.",
     link: "/curriculum/inquiry-based-learning",
   },
   {
     id: 2,
     title: "Collaborative Spaces",
-    description: "Interactive group activities help children build communication, teamwork, and social understanding.",
+    description: "Activities to help children build communication, teamwork.",
     link: "/curriculum/collaborative-spaces",
   },
   {
     id: 3,
     title: "Experiential Learning",
-    description: "Hands-on activities and real-world experiences allow children to learn by doing and discover meaning through action.",
+    description: "Allow children to learn by doing and through action.",
     link: "/curriculum/experiential-learning",
   },
 ];
@@ -189,9 +191,9 @@ const CurriculumPage = () => {
                   alt="bg logo"
                   className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-10 pointer-events-none z-0"
                 />
-                <h2 className="text-2xl font-bold relative z-10">{pathway.title}</h2>
+                <h2 className="text-2xl font-bold relative z-10 text-center">{pathway.title}</h2>
                 <p className="text-center relative z-10">{pathway.description}</p>
-                <Button className="relative z-10">Learn More</Button>
+                <Button variant='outline' className="relative z-10 bg-transparent">Learn More</Button>
               </Link>
             ))}
           </div>

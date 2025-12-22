@@ -9,6 +9,7 @@ import Testimonials from "@/components/Testimonials";
 import Topbar from "@/components/Topbar";
 import Video from "@/components/Video";
 import Welcome from "@/components/Welcome";
+import AdmissionsPopup from "@/components/AdmissionsPopup";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Testimonials />
       <Blogs />
       <Gallery />
+      <AdmissionsPopup />
     </div>
   );
 }

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/blog-1.png",
+        url: "https://littlealpha.in/og.png",
         width: 1200,
         height: 630,
         alt: "Little Alpha - Best Kindergarten School in Bikaner",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "About Little Alpha | Best Kindergarten School in Bikaner",
     description:
       "Discover Little Alpha - Bikaner's premier kindergarten and play school.",
-    images: ["/assets/blog-1.png"],
+    images: ["https://littlealpha.in/og.png"],
   },
   alternates: {
     canonical: "https://littlealpha.in/about",

@@ -72,7 +72,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .embla {
-    --slide-height: 60vh;
+    --slide-height: 100vh;
   }
 }
 

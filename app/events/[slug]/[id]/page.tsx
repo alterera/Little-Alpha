@@ -45,10 +45,17 @@ export async function generateMetadata({
   const description = extractText(article.article) || 
     `Read about ${article.title} event at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan.`;
 
+  const imageUrl = article.galleryImages?.[0]?.asset
+    ? urlFor(article.galleryImages[0].asset).width(1200).height(630).url()
+    : "https://littlealpha.in/og.png";
+
   return {
     title: `${article.title} | School Events | Little Alpha | Best Kindergarten School Bikaner`,
     description,
     keywords: [
+      "Best play school in Bikaner",
+      "Top kindergarten school in Bikaner",
+      "Best kindergarten school Bikaner",
       article.title,
       "School events Bikaner",
       "Kindergarten events Bikaner",
@@ -57,12 +64,26 @@ export async function generateMetadata({
       "Little Alpha events",
     ],
     openGraph: {
-      title: `${article.title} | Little Alpha School Events`,
+      title: `${article.title} | School Events | Little Alpha | Best Kindergarten School Bikaner`,
       description,
       url: `https://littlealpha.in/events/${categorySlug}/${articleSlug}`,
       siteName: "Little Alpha",
       locale: "en_IN",
       type: "article",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${article.title} | School Events | Little Alpha | Best Kindergarten School Bikaner`,
+      description,
+      images: [imageUrl],
     },
     alternates: {
       canonical: `https://littlealpha.in/events/${categorySlug}/${articleSlug}`,
@@ -70,6 +91,13 @@ export async function generateMetadata({
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }

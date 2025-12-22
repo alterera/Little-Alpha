@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   description:
     "Explore campus life at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan. Discover student activities, events, and vibrant school community life at our play school in Bikaner.",
   keywords: [
+    "Best play school in Bikaner",
+    "Top kindergarten school in Bikaner",
+    "Best kindergarten school Bikaner",
     "Campus life Bikaner",
     "Student activities Bikaner",
     "Kindergarten activities Bikaner",
@@ -35,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/blog-1.png",
+        url: "https://littlealpha.in/og.png",
         width: 1200,
         height: 630,
         alt: "Little Alpha Campus Life - Best Kindergarten School Bikaner",
@@ -47,7 +50,7 @@ export const metadata: Metadata = {
     title: "Campus Life at Little Alpha | Best Kindergarten School Bikaner",
     description:
       "Explore campus life at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan.",
-    images: ["/assets/blog-1.png"],
+    images: ["https://littlealpha.in/og.png"],
   },
   alternates: {
     canonical: "https://littlealpha.in/campus-life",

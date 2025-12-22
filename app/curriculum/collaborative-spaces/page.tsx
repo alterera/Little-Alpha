@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   description:
     "Discover Collaborative Spaces at Little Alpha - Best play school in Bikaner, Rajasthan. Interactive group activities help children build communication, teamwork, and social understanding at the best kindergarten school Bikaner.",
   keywords: [
+    "Best play school in Bikaner",
+    "Top kindergarten school in Bikaner",
+    "Best kindergarten school Bikaner",
     "Collaborative learning Bikaner",
     "Teamwork Bikaner",
     "Kindergarten curriculum Bikaner",
@@ -22,16 +25,30 @@ export const metadata: Metadata = {
     "Best Play School Bikaner",
     "Social learning Bikaner",
     "Little Alpha curriculum",
-    "Best kindergarten school Bikaner",
   ],
   openGraph: {
-    title: "Collaborative Spaces | Little Alpha Curriculum",
+    title: "Collaborative Spaces | Curriculum | Little Alpha | Best Play School Bikaner",
     description:
       "Discover Collaborative Spaces at Little Alpha - Best play school in Bikaner, Rajasthan. Interactive group activities for building communication and teamwork.",
     url: "https://littlealpha.in/curriculum/collaborative-spaces",
     siteName: "Little Alpha",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "https://littlealpha.in/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Collaborative Spaces at Little Alpha",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Collaborative Spaces | Curriculum | Little Alpha | Best Play School Bikaner",
+    description:
+      "Discover Collaborative Spaces at Little Alpha - Best play school in Bikaner, Rajasthan.",
+    images: ["https://littlealpha.in/og.png"],
   },
   alternates: {
     canonical: "https://littlealpha.in/curriculum/collaborative-spaces",
@@ -39,6 +56,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -51,7 +75,7 @@ const curriculumSlides = [
 const page = () => {
   return (
     <div className="w-full bg-white">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-8 sm:pb-12 lg:pb-16">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <DynamicBreadcrumb className="py-6" />
 
         <HeroBanner
@@ -124,7 +148,7 @@ const page = () => {
         </section>
 
         <section className="mt-10 sm:mt-12 lg:mt-16 py-8 sm:py-10 lg:py-12 -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-12 xl:-mx-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-          <div className="flex gap-10">
+          <div className="flex flex-col md:flex-row gap-10">
             <div className="flex-1 bg-[#FCECEE] text-[#D3465A] p-8 rounded-2xl flex justify-center items-center">
               <p className="text-center text-xl font-bold">
                 Collaboration strengthens communication, builds trust, and

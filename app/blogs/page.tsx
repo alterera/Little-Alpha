@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
 import { client } from "@/lib/sanity";
 import { blogPostsQuery } from "@/lib/sanity.queries";
@@ -41,6 +42,62 @@ function excerptFromPost(post: BlogPost, wordLimit = 20) {
 }
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: "Blogs & Articles | Little Alpha | Best Play School Bikaner",
+  description:
+    "Read insightful articles, tips, and stories from Little Alpha - Best play school in Bikaner, Rajasthan. Discover parenting tips, early childhood education insights, and school updates.",
+  keywords: [
+    "Little Alpha blog",
+    "Play school blog Bikaner",
+    "Kindergarten articles Bikaner",
+    "Early childhood education tips",
+    "Parenting tips Bikaner",
+    "Best play school Bikaner",
+    "Kindergarten school Bikaner",
+    "Education blog Bikaner",
+    "School updates Bikaner",
+    "Child development articles",
+  ],
+  openGraph: {
+    title: "Blogs & Articles | Little Alpha | Best Play School Bikaner",
+    description:
+      "Read insightful articles, tips, and stories from Little Alpha - Best play school in Bikaner, Rajasthan.",
+    url: "https://littlealpha.in/blogs",
+    siteName: "Little Alpha",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "https://littlealpha.in/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Little Alpha Blogs & Articles",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blogs & Articles | Little Alpha | Best Play School Bikaner",
+    description:
+      "Read insightful articles, tips, and stories from Little Alpha - Best play school in Bikaner, Rajasthan.",
+    images: ["https://littlealpha.in/og.png"],
+  },
+  alternates: {
+    canonical: "https://littlealpha.in/blogs",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const BlogsPage = async () => {
   const posts: BlogPost[] = await client.fetch(blogPostsQuery);

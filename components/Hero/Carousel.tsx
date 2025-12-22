@@ -92,17 +92,17 @@ const Carousel: React.FC<PropType> = (props) => {
                   className="object-cover"
                   sizes="100vw"
                 />
-                {/* Text Content Overlay - Bottom Left */}
+                {/* Text Content Overlay - Center on mobile, Bottom Left on larger screens */}
                 {currentSlide === slide.id - 1 && (
                   <motion.div
                     key={`slide-${slide.id}-${currentSlide}`}
                     initial="hidden"
                     animate="visible"
                     exit="hidden"
-                    className="absolute bottom-0 md:bottom-30 left-0 flex flex-col items-start justify-end z-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-8 sm:pb-12 md:pb-16 lg:pb-20"
+                    className="absolute inset-0 md:inset-auto md:bottom-30 md:left-0 md:right-auto flex flex-col items-center md:items-start justify-center md:justify-end z-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 md:pb-16 lg:pb-20"
                   >
                     {/* Title with colored words */}
-                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
+                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
                       {slide.content.words.map((word, index) => (
                         <React.Fragment key={index}>
                           <motion.h1
@@ -133,7 +133,7 @@ const Carousel: React.FC<PropType> = (props) => {
                       variants={descriptionVariants}
                       initial="hidden"
                       animate="visible"
-                      className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium max-w-2xl sm:max-w-3xl leading-relaxed drop-shadow-lg text-left"
+                      className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium max-w-2xl sm:max-w-3xl leading-relaxed drop-shadow-lg text-center md:text-left"
                     >
                       {slide.content.description}
                     </motion.p>

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
 import GalleryMasonry from "@/components/gallery/GalleryMasonry";
 import { client } from "@/lib/sanity";
@@ -28,6 +29,60 @@ type GalleryImage = {
 const PER_PAGE = 12;
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: "Photo Gallery | Little Alpha | Best Play School Bikaner",
+  description:
+    "Explore our photo gallery showcasing campus life, events, and daily learning experiences at Little Alpha - Best play school and kindergarten in Bikaner, Rajasthan.",
+  keywords: [
+    "Little Alpha gallery",
+    "Play school gallery Bikaner",
+    "Kindergarten photos Bikaner",
+    "School events photos Bikaner",
+    "Campus life Bikaner",
+    "Best play school Bikaner",
+    "Kindergarten school Bikaner",
+    "School activities Bikaner",
+  ],
+  openGraph: {
+    title: "Photo Gallery | Little Alpha | Best Play School Bikaner",
+    description:
+      "Explore our photo gallery showcasing campus life, events, and daily learning experiences at Little Alpha.",
+    url: "https://littlealpha.in/gallery",
+    siteName: "Little Alpha",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "https://littlealpha.in/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Little Alpha Photo Gallery",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Photo Gallery | Little Alpha | Best Play School Bikaner",
+    description:
+      "Explore our photo gallery showcasing campus life, events, and daily learning experiences at Little Alpha.",
+    images: ["https://littlealpha.in/og.png"],
+  },
+  alternates: {
+    canonical: "https://littlealpha.in/gallery",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const GalleryPage = async ({ searchParams }: PageProps) => {
   const { page = "1", category = "" } = await searchParams;

@@ -61,7 +61,7 @@ const HeroBanner = ({
       className="grid grid-cols-1 lg:grid-cols-[0.8fr_1fr] rounded-2xl overflow-hidden text-white"
       style={{ backgroundColor }}
     >
-      <div className="flex flex-col justify-between gap-6 p-6 sm:p-10 min-h-[300px] sm:min-h-[400px] relative overflow-hidden">
+      <div className="flex flex-col justify-between gap-6 p-6 sm:p-10 relative overflow-hidden">
         <Image
           src="/assets/bg/bg-logo.png"
           alt="Background logo"

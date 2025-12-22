@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
 import HeroBanner from "@/components/common/HeroBanner";
 import {
@@ -9,6 +10,62 @@ import {
 import { Button } from "@/components/ui/button";
 import { FileText, Download, ExternalLink } from "lucide-react";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Admission Instructions | Little Alpha | Best Play School Bikaner",
+  description:
+    "Get detailed admission instructions for Little Alpha - Best play school and kindergarten in Bikaner, Rajasthan. Learn about the admission process, requirements, and how to apply at the best kindergarten school Bikaner.",
+  keywords: [
+    "Best play school in Bikaner",
+    "Top kindergarten school in Bikaner",
+    "Best kindergarten school Bikaner",
+    "Admission instructions Bikaner",
+    "Kindergarten admission process",
+    "Play school admission process",
+    "Admission requirements Bikaner",
+    "How to apply Bikaner",
+    "School admission guide Bikaner",
+    "Little Alpha admission",
+  ],
+  openGraph: {
+    title: "Admission Instructions | Little Alpha | Best Play School Bikaner",
+    description:
+      "Get detailed admission instructions for Little Alpha - Best play school and kindergarten in Bikaner, Rajasthan. Learn about the admission process and requirements.",
+    url: "https://littlealpha.in/admissions/instructions",
+    siteName: "Little Alpha",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "https://littlealpha.in/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Admission Instructions at Little Alpha",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Admission Instructions | Little Alpha | Best Play School Bikaner",
+    description:
+      "Get detailed admission instructions for Little Alpha - Best play school and kindergarten in Bikaner, Rajasthan.",
+    images: ["https://littlealpha.in/og.png"],
+  },
+  alternates: {
+    canonical: "https://littlealpha.in/admissions/instructions",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const instructions = [
   {

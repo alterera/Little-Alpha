@@ -28,6 +28,9 @@ export async function generateMetadata({
     title: `${category.title} - School Events | Little Alpha | Best Kindergarten School Bikaner`,
     description: `Explore ${category.title} events at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan. Discover exciting school events and activities at our play school in Bikaner.`,
     keywords: [
+      "Best play school in Bikaner",
+      "Top kindergarten school in Bikaner",
+      "Best kindergarten school Bikaner",
       `${category.title} events Bikaner`,
       "School events Bikaner",
       "Kindergarten events Bikaner",
@@ -36,12 +39,26 @@ export async function generateMetadata({
       "Little Alpha events",
     ],
     openGraph: {
-      title: `${category.title} - School Events | Little Alpha`,
+      title: `${category.title} - School Events | Little Alpha | Best Kindergarten School Bikaner`,
       description: `Explore ${category.title} events at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan.`,
       url: `https://littlealpha.in/events/${slug}`,
       siteName: "Little Alpha",
       locale: "en_IN",
       type: "website",
+      images: [
+        {
+          url: "https://littlealpha.in/og.png",
+          width: 1200,
+          height: 630,
+          alt: `${category.title} Events at Little Alpha`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${category.title} - School Events | Little Alpha | Best Kindergarten School Bikaner`,
+      description: `Explore ${category.title} events at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan.`,
+      images: ["https://littlealpha.in/og.png"],
     },
     alternates: {
       canonical: `https://littlealpha.in/events/${slug}`,
@@ -49,6 +66,13 @@ export async function generateMetadata({
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, MoveUpRight, X } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
@@ -95,18 +95,20 @@ const Navbar = () => {
 
         {/* Mobile Actions */}
         <div
-          className={`flex md:hidden items-center gap-3 ${mobileActionsText}`}
+          className={`flex md:hidden items-center gap-3 ${mobileActionsText} relative z-10`}
         >
-          <Button
-            effect="shine"
-            className="rounded-none rounded-tl-2xl rounded-br-2xl bg-[#0F715F] hover:text-white hover:bg-[#F75691] hover:cursor-pointer"
-          >
-            Inquire Now
-          </Button>
+          <Link href={"/admissions"}>
+            <Button
+              effect="shine"
+              className="rounded-none rounded-tl-2xl rounded-br-2xl bg-[#0F715F] hover:text-white hover:bg-[#F75691] hover:cursor-pointer relative z-10"
+            >
+              Inquire Now
+            </Button>
+          </Link>
           <button
             onClick={toggleMenu}
             aria-label="Toggle navigation menu"
-            className={mobileMenuButtonClasses}
+            className={`${mobileMenuButtonClasses} relative z-10`}
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -115,7 +117,7 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-[40vw] min-w-[260px] bg-[#08382b] text-white z-100 transform transition-transform duration-500 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-[50vw] min-w-[260px] bg-[#08382b] text-white z-9999 transform transition-transform duration-500 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -145,9 +147,11 @@ const Navbar = () => {
           </nav>
 
           <div className="mt-auto">
-            <button className="w-full bg-[#0F715F] text-white py-3 rounded-tl-2xl rounded-br-2xl font-semibold">
-              Inquire Now
-            </button>
+            <Link href={"/admissions"}>
+              <button className="w-full bg-[#0F715F] text-white py-3 rounded-tl-2xl rounded-br-2xl font-semibold">
+                Inquire Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -157,7 +161,7 @@ const Navbar = () => {
         <button
           aria-label="Close menu overlay"
           onClick={closeMenu}
-          className="fixed inset-0 bg-black/40 z-90 md:hidden"
+          className="fixed inset-0 bg-black/40 z-[9998] md:hidden"
         />
       )}
     </header>

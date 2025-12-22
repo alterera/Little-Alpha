@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description:
     "Discover Inquiry Based Learning at Little Alpha - Best play school in Bikaner, Rajasthan. Our curriculum encourages children to explore questions, investigate ideas, and develop critical thinking through guided inquiry at the best kindergarten school Bikaner.",
   keywords: [
+    "Best play school in Bikaner",
+    "Top kindergarten school in Bikaner",
+    "Best kindergarten school Bikaner",
     "Inquiry based learning Bikaner",
     "Kindergarten curriculum Bikaner",
     "Play school curriculum Bikaner",
@@ -16,16 +19,30 @@ export const metadata: Metadata = {
     "Critical thinking Bikaner",
     "Early childhood education Bikaner",
     "Little Alpha curriculum",
-    "Best kindergarten school Bikaner",
   ],
   openGraph: {
-    title: "Inquiry Based Learning | Little Alpha Curriculum",
+    title: "Inquiry Based Learning | Curriculum | Little Alpha | Best Play School Bikaner",
     description:
       "Discover Inquiry Based Learning at Little Alpha - Best play school in Bikaner, Rajasthan. Our curriculum encourages children to explore questions and develop critical thinking.",
     url: "https://littlealpha.in/curriculum/inquiry-based-learning",
     siteName: "Little Alpha",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "https://littlealpha.in/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Inquiry Based Learning at Little Alpha",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Inquiry Based Learning | Curriculum | Little Alpha | Best Play School Bikaner",
+    description:
+      "Discover Inquiry Based Learning at Little Alpha - Best play school in Bikaner, Rajasthan.",
+    images: ["https://littlealpha.in/og.png"],
   },
   alternates: {
     canonical: "https://littlealpha.in/curriculum/inquiry-based-learning",
@@ -33,6 +50,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

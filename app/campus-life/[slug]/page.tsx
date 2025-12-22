@@ -28,6 +28,9 @@ export async function generateMetadata({
     title: `${category.title} - Campus Life | Little Alpha | Best Kindergarten School Bikaner`,
     description: `Explore ${category.title} at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan. Discover student activities and campus life at our play school in Bikaner.`,
     keywords: [
+      "Best play school in Bikaner",
+      "Top kindergarten school in Bikaner",
+      "Best kindergarten school Bikaner",
       `${category.title} Bikaner`,
       "Campus life Bikaner",
       "Student activities Bikaner",
@@ -36,12 +39,26 @@ export async function generateMetadata({
       "Little Alpha campus life",
     ],
     openGraph: {
-      title: `${category.title} - Campus Life | Little Alpha`,
+      title: `${category.title} - Campus Life | Little Alpha | Best Kindergarten School Bikaner`,
       description: `Explore ${category.title} at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan.`,
       url: `https://littlealpha.in/campus-life/${slug}`,
       siteName: "Little Alpha",
       locale: "en_IN",
       type: "website",
+      images: [
+        {
+          url: "https://littlealpha.in/og.png",
+          width: 1200,
+          height: 630,
+          alt: `${category.title} - Campus Life at Little Alpha`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${category.title} - Campus Life | Little Alpha | Best Kindergarten School Bikaner`,
+      description: `Explore ${category.title} at Little Alpha - Best kindergarten and play school in Bikaner, Rajasthan.`,
+      images: ["https://littlealpha.in/og.png"],
     },
     alternates: {
       canonical: `https://littlealpha.in/campus-life/${slug}`,
@@ -49,6 +66,13 @@ export async function generateMetadata({
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }
